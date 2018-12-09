@@ -51,7 +51,7 @@
 
     <div class="tab-content content">
         <p>${memberName},用户注册成功！2秒后自动跳转到登录页面，</p>
-        <p>如果无法跳转，请单击<a href="${pageContext.request.contextPath }/login1.jsp">去登录</a></p>
+        <p>如果无法跳转，请单击<a href="${pageContext.request.contextPath }/login.jsp">去登录</a></p>
     </div>
 </div>
 </body>

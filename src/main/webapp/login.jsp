@@ -43,7 +43,7 @@
 
             <div class="tab_1">
                 <img src="img/login/password_login.png">
-                <input id="pass" class="login_tab" type="password" name="memberPasssword" placeholder="请输入您的密码">
+                <input id="pass" class="login_tab" type="password" name="memberPassword" placeholder="请输入您的密码">
             </div>
 
             <input id="login_submit_button" type="submit" value="登录" >

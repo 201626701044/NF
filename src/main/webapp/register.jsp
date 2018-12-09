@@ -74,13 +74,13 @@
 
                 <div class="blank">
                     <label>密码&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input id="mima" class="register_in"  type="password" name="memberPassward" placeholder="请输入密码">
+                    <input id="mima" class="register_in"  type="password" name="memberPassword" placeholder="请输入密码">
                 </div>
                 <div class="wrong" id="cuo2">密码由6-12个字母、数字、下划线组成</div>
 
                 <div class="blank">
                     <label>密码确认</label>
-                    <input id="remima" class="register_in" type="password" name="passward01" placeholder="请确认密码">
+                    <input id="remima" class="register_in" type="password" name="password01" placeholder="请确认密码">
                 </div>
                 <div class="wrong" id="cuo3">两次密码不一致</div>
 
@@ -108,13 +108,13 @@
 
                 <div class="blank">
                     <label>密码&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input id="re-mima" class="register_in"  type="password" name="memberPassward" placeholder="请输入密码">
+                    <input id="re-mima" class="register_in"  type="password" name="memberPassword" placeholder="请输入密码">
                 </div>
                 <div class="wrong" id="re-cuo2">密码由6-12个字母、数字、下划线组成</div>
 
                 <div class="blank">
                     <label>密码确认</label>
-                    <input id="re-remima" class="register_in" type="password" name="passward01" placeholder="请确认密码">
+                    <input id="re-remima" class="register_in" type="password" name="password01" placeholder="请确认密码">
                 </div>
                 <div class="wrong" id="re-cuo3">两次密码不一致</div>
 

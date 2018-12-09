@@ -12,6 +12,7 @@
 %>
 <html>
 <head>
+    <base href="<%=basePath%>"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="refresh" content="2;url=<%=basePath%>register.jsp"/>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -49,7 +50,7 @@
     </ul>
 
     <div class="tab-content content">
-        <p>${memberName},用户已存在！2秒后自动跳转到注册页面，重新注册</p>
+        <p>用户注册存在！2秒后自动跳转到注册页面，</p>
         <p>如果无法跳转，请单击<a href="${pageContext.request.contextPath }/register.jsp">去注册</a></p>
     </div>
 </div>

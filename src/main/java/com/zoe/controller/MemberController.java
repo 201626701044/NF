@@ -94,7 +94,7 @@ public class MemberController {
             session.setAttribute("memberPassword",memberPassword);
             return "index";
         }else {
-            return "login1";
+            return "login2";
         }
     }
 
