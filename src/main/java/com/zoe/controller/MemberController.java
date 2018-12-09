@@ -3,6 +3,7 @@ package com.zoe.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zoe.pojo.Member;
+import com.zoe.pojo.Rentrequest;
 import com.zoe.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // 告诉spring mvc这是一个控制器类
@@ -65,6 +68,8 @@ public class MemberController {
         System.out.println(JSONObject.toJSON(map).toString());
         return  JSONObject.toJSON(map).toString();
     }
+
+
 
 
     @RequestMapping("regist")
