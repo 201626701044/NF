@@ -6,11 +6,18 @@ import com.zoe.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	MemberMapper memberMapper;
+
+	@Override
+	public List<Member> list() {
+		return memberMapper.list();
+	}
 
 	@Override
 	public int findMemberByNameAndPwd(String memberName, String memberPassword) {

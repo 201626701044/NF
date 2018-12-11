@@ -4,6 +4,10 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="com.zoe.mapper.MemberMapper">
+
+		<select id="list" resultType="Member">
+			select * from   Member
+	  	</select>
 		<insert id="add" parameterType="Member" >
 	        insert into member ( member_name, member_password) values (#{memberName},#{memberPassword})
 	    </insert>

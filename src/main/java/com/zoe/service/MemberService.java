@@ -3,7 +3,11 @@ package com.zoe.service;
 
 import com.zoe.pojo.Member;
 
+import java.util.List;
+
 public interface MemberService {
+
+	 List<Member> list();
 
 	public int findMemberByNameAndPwd(String memberName,String memberPassword);
 

@@ -3,7 +3,6 @@ package com.zoe.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zoe.pojo.Member;
-import com.zoe.pojo.Rentrequest;
 import com.zoe.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +27,22 @@ public class MemberController {
 
     @Autowired
     MemberService memberService;
+
+    @RequestMapping("admin_member_list")
+    public String list(Model model) {
+        List<Member> cs = memberService.list();
+        model.addAttribute("cs", cs);
+        return "admin/listMember";
+    }
+
+    @ResponseBody
+    @RequestMapping(produces="text/html;charset=UTF-8", value = "/getManyMembers")
+    public String getManyHouses(Model model) {
+        List<Member> cs = memberService.list();
+        model.addAttribute("cs", cs);
+        return JSONObject.toJSON(cs).toString();
+
+    }
 
     @ResponseBody
     @RequestMapping("regist2")
@@ -68,8 +82,6 @@ public class MemberController {
         System.out.println(JSONObject.toJSON(map).toString());
         return  JSONObject.toJSON(map).toString();
     }
-
-
 
 
     @RequestMapping("regist")

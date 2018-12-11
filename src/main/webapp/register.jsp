@@ -62,7 +62,7 @@
     </ul>
 
     <div class="tab-content content">
-        <div class="tab-pane" id="owner">
+        <div class="tab-pane fade in active" id="owner">
             <form action="${pageContext.request.contextPath }/member/regist.controller" method="post">
 
                 <div class="blank">

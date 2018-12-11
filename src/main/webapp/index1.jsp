@@ -8,8 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<form action="${pageContext.request.contextPath }/member/admin_rentrequest_list.controller">
-    <td><input type="submit" value="注册"></td>
+<form action="${pageContext.request.contextPath }/house_list.controller">
+    <td><input type="submit" value="house"></td>
+</form>
+<form action="${pageContext.request.contextPath }/member/admin_member_list.controller">
+    <td><input type="submit" value="member"></td>
+</form>
+<form action="${pageContext.request.contextPath }/admin_house_list.controller">
+    <td><input type="submit" value="house"></td>
+</form>
+<form action="${pageContext.request.contextPath }/request/admin_rentrequest_list.controller">
+    <td><input type="submit" value="request"></td>
 </form>
 </body>
 </html>

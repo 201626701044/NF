@@ -16,7 +16,7 @@ import java.util.List;
 
 // 告诉spring mvc这是一个控制器类
 @Controller
-@RequestMapping("/house")
+@RequestMapping("")
 public class HouseController {
 
     @Autowired
@@ -31,11 +31,30 @@ public class HouseController {
 
     }
 
+    @ResponseBody
+    @RequestMapping(produces="text/html;charset=UTF-8", value = "/getHouses")
+    public String getManyHousesAndRequest(Model model) {
+        List<House> cs = houseService.listAndRequest();
+        model.addAttribute("cs", cs);
+        return JSONObject.toJSON(cs).toString();
+
+    }
+
+    @RequestMapping("house_list")
+    public String getManyHousesAndRequest1(Model model) {
+        List<House> cs = houseService.listAndRequest();
+        model.addAttribute("cs", cs);
+        return "admin/listHouses";
+
+    }
+
+
+
     @RequestMapping("admin_house_list")
     public String list(Model model) {
         List<House> cs = houseService.list();
         model.addAttribute("cs", cs);
-        return "admin/listHouses";
+        return "admin/homePage";
     }
 
 }

@@ -16,9 +16,22 @@ import java.util.List;
 public class HouseServiceImpl implements HouseService {
 	@Autowired
 	HouseMapper houseMapper;
+	@Autowired
+	RentrequestMapper  rentrequestMapper;
 
 	@Override
 	public List<House> list() {
 		return houseMapper.list();
 	}
+
+	@Override
+	public List<House> listAndRequest() {
+		List<House> houses=houseMapper.list();
+		for(House house:houses)
+		{
+			house.setRentrequests(rentrequestMapper.listAndRequest(house.getHouseID()));
+		}
+		return houses;
+	}
+
 }

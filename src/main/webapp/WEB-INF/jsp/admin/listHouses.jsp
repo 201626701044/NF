@@ -25,6 +25,10 @@
             <th>房子类型</th>
             <th>地区</th>
             <th>电梯</th>
+            <th>图片</th>
+            <th>cc</th>
+
+
         </tr>
         </thead>
         <tbody>
@@ -39,8 +43,13 @@
                 <td>${c.houseType}</td>
                 <td>${c.area}</td>
                 <td>${c.elevator}</td>
+                <td><img src="${c.image}"></td>
+                <td>${c.rentrequests}</td>
+
             </tr>
         </c:forEach>
+
+
         </tbody>
     </table>
 </div>

@@ -1,21 +1,49 @@
 package com.zoe.pojo;
 
-public class House {
-    public String houseID;
-    public String houseName;
-    public String memberID;
-    public String rentPrice;
-    public String checkInDate;
-    public String houseType;
-    public String area;
-    public String elevator;
+import java.util.List;
 
-    public String getHouseID() {
+public class House {
+    private int houseID;
+    private String houseName;
+    private int memberID;
+    private String rentPrice;
+    private String checkInDate;
+    private String houseType;
+    private String area;
+    private String elevator;
+    private String image;
+    private List<Rentrequest> rentrequests;
+
+    public List<Rentrequest> getRentrequests() {
+        return rentrequests;
+    }
+
+    public void setRentrequests(List<Rentrequest> rentrequests) {
+        this.rentrequests = rentrequests;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getHouseID() {
         return houseID;
     }
 
-    public void setHouseID(String houseID) {
+    public void setHouseID(int houseID) {
         this.houseID = houseID;
+    }
+
+    public int getMemberID() {
+        return memberID;
+    }
+
+    public void setMemberID(int memberID) {
+        this.memberID = memberID;
     }
 
     public String getHouseName() {
@@ -26,13 +54,7 @@ public class House {
         this.houseName = houseName;
     }
 
-    public String getMemberID() {
-        return memberID;
-    }
 
-    public void setMemberID(String memberID) {
-        this.memberID = memberID;
-    }
 
     public String getRentPrice() {
         return rentPrice;
@@ -77,14 +99,15 @@ public class House {
     @Override
     public String toString() {
         return "House{" +
-                "houseID='" + houseID + '\'' +
+                "houseID=" + houseID +
                 ", houseName='" + houseName + '\'' +
-                ", memberID='" + memberID + '\'' +
+                ", memberID=" + memberID +
                 ", rentPrice='" + rentPrice + '\'' +
                 ", checkInDate='" + checkInDate + '\'' +
                 ", houseType='" + houseType + '\'' +
                 ", area='" + area + '\'' +
                 ", elevator='" + elevator + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
