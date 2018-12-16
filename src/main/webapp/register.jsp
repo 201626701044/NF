@@ -57,8 +57,8 @@
 <div class="main">
 
     <ul class="nav nav-tabs top">
-        <li id="left"><a href="#owner" data-toggle="tab">租客登录</a></li>
-        <li id="right"><a href="#tenement" data-toggle="tab">房东登录</a> </li>
+        <li id="left"><a href="#owner" data-toggle="tab">租客注册</a></li>
+        <li id="right"><a href="#tenement" data-toggle="tab">房东注册</a> </li>
     </ul>
 
     <div class="tab-content content">

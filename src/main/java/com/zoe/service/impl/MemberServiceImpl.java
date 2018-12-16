@@ -20,6 +20,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public List<Member> list1() {
+		return memberMapper.list1();
+	}
+
+	@Override
 	public int findMemberByNameAndPwd(String memberName, String memberPassword) {
 		return memberMapper.findMemberByNameAndPwd(memberName,memberPassword);
 	}

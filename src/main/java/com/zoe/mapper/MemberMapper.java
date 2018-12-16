@@ -10,6 +10,7 @@ import java.util.List;
 public interface MemberMapper {
 
     List<Member> list();
+    List<Member> list1();
 
     public int findMemberByNameAndPwd(@Param("memberName")String param1,@Param("memberPassword")String param2);
 

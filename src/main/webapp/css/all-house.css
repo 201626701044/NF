@@ -1,0 +1,74 @@
+*{
+    margin:0px;
+    padding:0px;
+
+}
+/*房屋区域开始*/
+/*.content{*/
+    /*width: 100%;*/
+    /*border: 1px red solid;*/
+    /*height: 255px;*/
+    /*margin: 10px 0px;*/
+    /*padding: 10px 0px;*/
+/*}*/
+/*.content .content-left{*/
+    /*float: left;*/
+    /*width: 245px;*/
+    /*height: 100%;*/
+
+/*}*/
+/*.content-right{*/
+    /*float: left;*/
+    /*width: 50%;*/
+    /*height: 100%;*/
+    /*background-color: gainsboro;*/
+/*}*/
+
+/*滚动图片*/
+#outer{
+    width: 245px;
+    height: 255px;
+
+    /*子元素开启绝对定位，父元素最好开启相对定位*/
+    /*子元素开启绝对定位，父元素最好开启相对定位*/
+    position: relative;
+    /*裁剪溢出内容*/
+    overflow: hidden;
+}
+#imgList{
+    list-style: none;
+    width: 2000px;
+    /*开启绝对定位*/
+    position: absolute;
+    /*设置偏移量*/
+    left: 0px;
+
+}
+#imgList li{
+    float: left;
+    margin: 0px 10px;
+}
+#navDiv{
+    /*开启绝对定位*/
+    position: absolute;
+    bottom: 15px;
+    /*设置 left 的值
+          outer宽度  245
+          navDiv宽度  125
+          245-125=120/2=60
+    */
+    /*left: 60px;*/
+}
+#navDiv a{
+    width: 15px;
+    height: 15px;
+    margin: 5px ;
+    background: goldenrod;
+    float: left;/*设置浮动后，会脱离文档流，内联元素变为块元素*/
+    /*设置浮动后，会脱离文档流，内联元素变为块元素*/
+    /*设置浮动后，会脱离文档流，内联元素变为块元素*/
+    opacity: 0.5;
+}
+#navDiv a:hover{
+    /*background: #99ff99;*/
+}

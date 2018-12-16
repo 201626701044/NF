@@ -10,6 +10,7 @@
 
 <html>
 <head>
+    <link href="main.css" type="text/css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
@@ -27,6 +28,7 @@
             <th>电梯</th>
             <th>图片</th>
             <th>cc</th>
+            <th>城市</th>
 
 
         </tr>
@@ -44,14 +46,22 @@
                 <td>${c.area}</td>
                 <td>${c.elevator}</td>
                 <td><img src="${c.image}"></td>
-                <td>${c.rentrequests}</td>
+
+                <c:forEach items="${c.rentrequests}" var="d"   varStatus="status">
+                    <td>${c.rentrequests.get(status.index).reqId}</td>
+                    <td>${c.rentrequests.get(status.index).city}</td>
+                </c:forEach>
 
             </tr>
         </c:forEach>
-
-
         </tbody>
     </table>
+    <div style="text-align:center">
+        <a href="?start=1">首页</a>
+        <a href="?start=${page.start-page.count}">上一页</a>
+        <a href="?start=${page.start+page.count}">下一页</a>
+        <a href="?start=${page.last}">末  页</a>
+    </div>
 </div>
 </body>
 </html>

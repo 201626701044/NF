@@ -31,15 +31,26 @@ public class MemberController {
     @RequestMapping("admin_member_list")
     public String list(Model model) {
         List<Member> cs = memberService.list();
-        model.addAttribute("cs", cs);
+        model.addAttribute("cs1", cs);
         return "admin/listMember";
     }
 
     @ResponseBody
     @RequestMapping(produces="text/html;charset=UTF-8", value = "/getManyMembers")
-    public String getManyHouses(Model model) {
+    public String getManyMembers(Model model) {
         List<Member> cs = memberService.list();
+        model.addAttribute("cs1", cs);
+        System.out.println("test---------------"+JSONObject.toJSON(cs).toString());
+        return JSONObject.toJSON(cs).toString();
+
+    }
+
+    @ResponseBody
+    @RequestMapping(produces="text/html;charset=UTF-8", value = "/getOneMember")
+    public String getOneMember(Model model) {
+        List<Member> cs = memberService.list1();
         model.addAttribute("cs", cs);
+        System.out.println(JSONObject.toJSON(cs).toString());
         return JSONObject.toJSON(cs).toString();
 
     }
@@ -75,7 +86,6 @@ public class MemberController {
                 regMsg= memberName;
             }
         }
-
         Map<String,String> map= new HashMap<String,String >();
         map.put("regMsg",regMsg);
         map.put("regFlag",regFlag);
@@ -100,7 +110,7 @@ public class MemberController {
         }
     }
     @RequestMapping("login")
-    public String memberLogin(HttpServletRequest request) {
+    public String memberLogin2(HttpServletRequest request) {
         String memberName = request.getParameter("memberName");
         String memberPassword = request.getParameter("memberPassword");
         int num = memberService.findMemberByNameAndPwd(memberName,memberPassword);
@@ -115,6 +125,27 @@ public class MemberController {
         }
     }
 
+//    @ResponseBody
+//    @RequestMapping("login2")
+//    public String memberLogin(HttpServletRequest request) {
+//        String memberName = request.getParameter("memberName");
+//        String memberPassword = request.getParameter("memberPassword");
+//        int num = memberService.findMemberByNameAndPwd(memberName,memberPassword);
+//        if(num>0){
+//            //合法用户
+//            HttpSession session = request.getSession();
+//            session.setAttribute("memberName",memberName);
+//            session.setAttribute("memberPassword",memberPassword);
+////            Map<String,String> map= new HashMap<String,String >();
+////            map.put("regMsg",regMsg);
+////            map.put("regFlag",regFlag);
+////            System.out.println(JSONObject.toJSON(map).toString());
+////            return  JSONObject.toJSON(map).toString();
+////            return JSONObject.toJSON(map).toString();
+//        }else {
+//            return "login2";
+//        }
+//    }
     @RequestMapping("memberNameValidate")
     public void memberNameValidate(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //1.读取浏览器发送过来的新增用户名
@@ -126,10 +157,10 @@ public class MemberController {
         PrintWriter out =response.getWriter();
         if(num==0){
             //新增用户名在数据库不存在，可以使用
-            out.write("用户名可以使用");
+            out.write("contiune");
         }else {
             //新增用户名在数据库存在，不可以使用
-            out.write("用户名已经存在");
+            out.write("exsit");
         }
     }
 }

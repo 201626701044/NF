@@ -6,7 +6,10 @@
 	<mapper namespace="com.zoe.mapper.MemberMapper">
 
 		<select id="list" resultType="Member">
-			select * from   Member
+			select * from   member order by member_ID desc
+	  	</select>
+		<select id="list1" resultType="Member">
+			select * from   member where member_name=#{memberName} and member_password=#{memberPassword}
 	  	</select>
 		<insert id="add" parameterType="Member" >
 	        insert into member ( member_name, member_password) values (#{memberName},#{memberPassword})

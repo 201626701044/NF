@@ -12,6 +12,11 @@ public class House {
     private String area;
     private String elevator;
     private String image;
+
+    /**
+     * 非数据库字段
+     * 一个房源对应多个请求
+     */
     private List<Rentrequest> rentrequests;
 
     public List<Rentrequest> getRentrequests() {

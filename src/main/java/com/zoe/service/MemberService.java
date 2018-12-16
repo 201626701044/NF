@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface MemberService {
 
-	 List<Member> list();
+	List<Member> list();
+
+	List<Member> list1();
 
 	public int findMemberByNameAndPwd(String memberName,String memberPassword);
 

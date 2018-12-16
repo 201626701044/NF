@@ -2,10 +2,13 @@ package com.zoe.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zoe.pojo.House;
 import com.zoe.pojo.Rentrequest;
 import com.zoe.service.HouseService;
 import com.zoe.service.RentrequestService;
+import com.zoe.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,10 +44,15 @@ public class HouseController {
     }
 
     @RequestMapping("house_list")
-    public String getManyHousesAndRequest1(Model model) {
+    public String getManyHousesAndRequest1(Model model, Page page) {
+        PageHelper.offsetPage(page.getStart(),page.getCount());
         List<House> cs = houseService.listAndRequest();
+        int total = (int) new PageInfo<>(cs).getTotal();
+        page.setTotal(total);
         model.addAttribute("cs", cs);
-        return "admin/listHouses";
+        model.addAttribute("page",page);
+        return "admin/requestPage";
+//        return "admin/listHouses";
 
     }
 
