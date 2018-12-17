@@ -15,6 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 // 告诉spring mvc这是一个控制器类
@@ -26,6 +31,25 @@ public class HouseController {
     HouseService houseService;
 
     @ResponseBody
+    @RequestMapping("list")
+    public String aaa(Model model,String alink) throws IOException {
+
+        List<House> houseList=houseService.findArea(alink);
+
+        model.addAttribute("houseList", houseList);
+        return JSONObject.toJSON(houseList).toString();
+    }
+
+    @RequestMapping("houseList")
+    public String bbb(Model model,HttpServletRequest request) {
+        String addlist=request.getParameter("addlist");
+//        String area =houseService.findArea(addlist);
+//        model.addAttribute("area",area);
+        return "admin/homePage";
+    }
+
+
+        @ResponseBody
     @RequestMapping(produces="text/html;charset=UTF-8", value = "/getManyHouses")
     public String getManyHouses(Model model) {
         List<House> cs = houseService.list();
@@ -64,5 +88,7 @@ public class HouseController {
         model.addAttribute("cs", cs);
         return "admin/homePage";
     }
+
+
 
 }

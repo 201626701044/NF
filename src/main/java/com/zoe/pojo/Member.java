@@ -1,81 +1,85 @@
 package com.zoe.pojo;
 
+
 public class Member {
 
-    private int memberID;
-    private String memberName;
-    private String memberPassword;
-    private String memberSex;
-    private String memberIdcard;
-    private String memberPhone;
-    private String memberEmail;
+    private int member_ID;
+    private String member_name;
+    private String member_password;
+    private String member_sex;
+    private String member_idcard;
+    private String member_phone;
 
-    public String getMemberSex() {
-        return memberSex;
+    public int getMember_ID() {
+        return member_ID;
     }
 
-    public void setMemberSex(String memberSex) {
-        this.memberSex = memberSex;
+    public void setMember_ID(int member_ID) {
+        this.member_ID = member_ID;
     }
 
-    public String getMemberIdcard() {
-        return memberIdcard;
+    public String getMember_name() {
+        return member_name;
     }
 
-    public void setMemberIdcard(String memberIdcard) {
-        this.memberIdcard = memberIdcard;
+    public void setMember_name(String member_name) {
+        this.member_name = member_name;
     }
 
-    public String getMemberPhone() {
-        return memberPhone;
+    public String getMember_password() {
+        return member_password;
     }
 
-    public void setMemberPhone(String memberPhone) {
-        this.memberPhone = memberPhone;
+    public void setMember_password(String member_password) {
+        this.member_password = member_password;
     }
 
-    public String getMemberEmail() {
-        return memberEmail;
+    public String getMember_sex() {
+        return member_sex;
     }
 
-    public void setMemberEmail(String memberEmail) {
-        this.memberEmail = memberEmail;
+    public void setMember_sex(String member_sex) {
+        this.member_sex = member_sex;
     }
 
-    public int getMemberID() {
-        return memberID;
+    public String getMember_idcard() {
+        return member_idcard;
     }
 
-    public void setMemberID(int memberID) {
-        this.memberID = memberID;
+    public void setMember_idcard(String member_idcard) {
+        this.member_idcard = member_idcard;
     }
 
-    public String getMemberName() {
-        return memberName;
+    public String getMember_phone() {
+        return member_phone;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setMember_phone(String member_phone) {
+        this.member_phone = member_phone;
     }
 
-    public String getMemberPassword() {
-        return memberPassword;
+    public String getMember_email() {
+        return member_email;
     }
 
-    public void setMemberPassword(String memberPassword) {
-        this.memberPassword = memberPassword;
+    public void setMember_email(String member_email) {
+        this.member_email = member_email;
     }
 
     @Override
     public String toString() {
         return "Member{" +
-                "memberID=" + memberID +
-                ", memberName='" + memberName + '\'' +
-                ", memberPassword='" + memberPassword + '\'' +
-                ", memberSex='" + memberSex + '\'' +
-                ", memberIdcard='" + memberIdcard + '\'' +
-                ", memberPhone='" + memberPhone + '\'' +
-                ", memberEmail='" + memberEmail + '\'' +
+                "member_ID=" + member_ID +
+                ", member_name='" + member_name + '\'' +
+                ", member_password='" + member_password + '\'' +
+                ", member_sex='" + member_sex + '\'' +
+                ", member_idcard='" + member_idcard + '\'' +
+                ", member_phone='" + member_phone + '\'' +
+                ", member_email='" + member_email + '\'' +
                 '}';
     }
+
+    private String member_email;
+
+
 }

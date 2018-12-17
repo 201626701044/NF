@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,12 @@ public class MemberController {
 
     @Autowired
     MemberService memberService;
+
+    @RequestMapping("getMember")
+    public ModelAndView add(Member member){
+        ModelAndView mav=new ModelAndView("showMember");
+        return mav;
+    }
 
     @RequestMapping("admin_member_list")
     public String list(Model model) {
@@ -47,12 +54,11 @@ public class MemberController {
 
     @ResponseBody
     @RequestMapping(produces="text/html;charset=UTF-8", value = "/getOneMember")
-    public String getOneMember(Model model) {
-        List<Member> cs = memberService.list1();
+    public String getOneMember(Model model,Member member) {
+        List<Member> cs = memberService.list1(member.getMember_name() , member.getMember_password());
         model.addAttribute("cs", cs);
         System.out.println(JSONObject.toJSON(cs).toString());
         return JSONObject.toJSON(cs).toString();
-
     }
 
     @ResponseBody
@@ -60,9 +66,9 @@ public class MemberController {
     public String regist2(Member member) {
         String regFlag=null;
         String regMsg=null;
-        System.out.println("用户注册：" + member.getMemberName() + member.getMemberPassword());
-        String memberName = member.getMemberName();
-        String memberPassword = member.getMemberPassword();
+        System.out.println("用户注册：" + member.getMember_name() + member.getMember_password());
+        String memberName = member.getMember_name();
+        String memberPassword = member.getMember_password();
         if (memberName != null && memberName.trim().equals("") || memberPassword != null && memberPassword.trim().equals("")) {
             regMsg= "用户名或密码为空";
             regFlag= "isnull";

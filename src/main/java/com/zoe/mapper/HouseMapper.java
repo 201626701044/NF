@@ -9,4 +9,5 @@ import java.util.List;
 public interface HouseMapper {
 
     List<House> list();
+    public  List<House> findArea(String area);
 }

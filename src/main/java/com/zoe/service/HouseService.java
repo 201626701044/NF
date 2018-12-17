@@ -9,6 +9,7 @@ public interface HouseService {
 
 	List<House> list();
 	List<House> listAndRequest();
+	public List<House> findArea(String area);
 
 }
 

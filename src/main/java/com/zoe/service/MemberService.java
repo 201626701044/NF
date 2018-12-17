@@ -9,7 +9,7 @@ public interface MemberService {
 
 	List<Member> list();
 
-	List<Member> list1();
+	List<Member> list1(String memberName,String memberPassword);
 
 	public int findMemberByNameAndPwd(String memberName,String memberPassword);
 

@@ -34,4 +34,15 @@ public class HouseServiceImpl implements HouseService {
 		return houses;
 	}
 
+	@Override
+	public List<House> findArea(String area) {
+
+		List<House> houses=houseMapper.findArea(area);
+		for(House house:houses)
+		{
+			house.setRentrequests(rentrequestMapper.listAndRequest(house.getHouseID()));
+		}
+		return houses;
+	}
+
 }

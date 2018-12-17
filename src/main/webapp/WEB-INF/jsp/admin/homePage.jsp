@@ -5,21 +5,59 @@
   Time: 16:42
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
 <html>
 <head>
+    <base href="<%=basePath%>"/>
     <meta content="text/css " charset="utf-8">
     <title>主页面</title>
     <link href="css/header-footer.css" type="text/css" rel="stylesheet"  />
     <link href="css/homePage.css" type="text/css" rel="stylesheet"/>
     <link href="../css/all-house.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/cityselect.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
     <script type="text/javascript" src="js/cityselect.js"></script>
     <script src="../js/all-house.js" type="text/javascript"></script>
     <!--<script src="../js/tools.js" type="text/javascript"></script>-->
+    <style >
+
+    .activeLink {color:red;}
+    </style>
 </head>
+<script >
+    $(document).ready(function() {
+  //alert();
+
+        $(".lookfor").click(function() {
+
+            $(".lookfor").removeClass("active");
+            $(this).addClass("active");
+
+          alert($("#num1234 .active").attr("numLimit"));
+          alert($("#area1234 .active").attr("addlist"));
+
+          //alert($(this).attr("addlist"));
+
+            $.get("<%=basePath%>list.controller",{alink:$(this).attr("addlist")} ,function(result){
+                alert(result);
+            });
+
+
+            $("#myframe").attr("src","<%=basePath%>houseList.controller?"+Math.random());
+
+
+        });
+    });
+
+</script>
+
 <body>
 
 <div class="header">
@@ -83,20 +121,22 @@
                 <span class="">位置：</span>
             </div>
 
-            <div class="sort-right">
-                <a href="#" class="active">不限</a>
-                <a href="#" class="">新建</a>
-                <a href="#" class="">红谷滩</a>
-                <a href="#" class="">西湖</a>
-                <a href="#" class="">青山湖</a>
-                <a href="#" class="">高新区</a>
-                <a href="#" class="">高新区</a>
-                <a href="#" class="">南昌县</a>
-                <a href="#" class="">青云谱</a>
-                <a href="#" class="">经开区</a>
-                <a href="#" class="">湾里</a>
-                <a href="#" class="">进贤</a>
-                <a href="#" class="">安义</a>
+            <div class="sort-right" id="area1234">
+                <a  href="javaScript:;" class="active lookfor">不限</a>
+                <c:forEach items="${cs}" var="c">
+                    <a class="lookfor"  addlist="${c.area}"   href="javaScript:;" target="myframe" >${c.area}</a>
+                </c:forEach>
+                <%--<a href="#" class="">红谷滩</a>--%>
+                <%--<a href="#" class="">西湖</a>--%>
+                <%--<a href="#" class="">青山湖</a>--%>
+                <%--<a href="#" class="">高新区</a>--%>
+                <%--<a href="#" class="">高新区</a>--%>
+                <%--<a href="#" class="">南昌县</a>--%>
+                <%--<a href="#" class="">青云谱</a>--%>
+                <%--<a href="#" class="">经开区</a>--%>
+                <%--<a href="#" class="">湾里</a>--%>
+                <%--<a href="#" class="">进贤</a>--%>
+                <%--<a href="#" class="">安义</a>--%>
             </div>
 
         </div>
@@ -110,9 +150,9 @@
                 <span class="">人数：</span>
             </div>
 
-            <div class="sort-right">
-                <a href="#" class="active">不限</a>
-                <a href="#" class="wither">单人入住</a>
+            <div class="sort-right" id="num1234">
+                <a href="#" class="wither">不限</a>
+                <a href="#" class="wither  active"  numLimit="单人入住">单人入住</a>
                 <a href="#" class="wither">双人入住</a>
                 <a href="#" class="wither">三人入住</a>
                 <a href="#" class="wither">四人入住</a>
@@ -212,7 +252,7 @@
     <div class="title-line"></div>
 
     <!--第一栏房子-->
-    <c:forEach items="${cs}" var="c">
+    <c:forEach items="${area}" var="c">
     <div class="content">
 
         <div class="content-left">
