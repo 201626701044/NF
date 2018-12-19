@@ -45,4 +45,16 @@ public class HouseServiceImpl implements HouseService {
 		return houses;
 	}
 
+	@Override
+	public List<House> listHouse(String area,String rentNum,int rentPrice1,int rentPrice2,
+								 String checkInDate,String sex,String way) {
+		List<House> houses=houseMapper.listHouse(area,rentNum,rentPrice1,rentPrice2,checkInDate,sex,way);
+//	 	List<House> houses=houseMapper.list();
+//		for(House house:houses)
+//		{
+//			house.setRentrequests(rentrequestMapper.listAndRequest(house.getHouseID()));
+//		}
+		return houses;
+	}
+
 }

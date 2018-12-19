@@ -6,12 +6,16 @@ public class House {
     private int houseID;
     private String houseName;
     private int memberID;
-    private String rentPrice;
+    private int rentPrice;
     private String checkInDate;
     private String houseType;
     private String area;
-    private String elevator;
+    private String rentNum;
     private String image;
+    private String way;
+    private String description;
+    private String sex;
+
 
     /**
      * 非数据库字段
@@ -59,13 +63,11 @@ public class House {
         this.houseName = houseName;
     }
 
-
-
-    public String getRentPrice() {
+    public int getRentPrice() {
         return rentPrice;
     }
 
-    public void setRentPrice(String rentPrice) {
+    public void setRentPrice(int rentPrice) {
         this.rentPrice = rentPrice;
     }
 
@@ -93,12 +95,36 @@ public class House {
         this.area = area;
     }
 
-    public String getElevator() {
-        return elevator;
+    public String getRentNum() {
+        return rentNum;
     }
 
-    public void setElevator(String elevator) {
-        this.elevator = elevator;
+    public void setRentNum(String rentNum) {
+        this.rentNum = rentNum;
+    }
+
+    public String getWay() {
+        return way;
+    }
+
+    public void setWay(String way) {
+        this.way = way;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     @Override
@@ -107,12 +133,16 @@ public class House {
                 "houseID=" + houseID +
                 ", houseName='" + houseName + '\'' +
                 ", memberID=" + memberID +
-                ", rentPrice='" + rentPrice + '\'' +
+                ", rentPrice=" + rentPrice +
                 ", checkInDate='" + checkInDate + '\'' +
                 ", houseType='" + houseType + '\'' +
                 ", area='" + area + '\'' +
-                ", elevator='" + elevator + '\'' +
+                ", rentNum='" + rentNum + '\'' +
                 ", image='" + image + '\'' +
+                ", way='" + way + '\'' +
+                ", description='" + description + '\'' +
+                ", sex='" + sex + '\'' +
+                ", rentrequests=" + rentrequests +
                 '}';
     }
 }

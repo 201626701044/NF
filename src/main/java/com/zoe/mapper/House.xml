@@ -10,5 +10,29 @@
 		<select id="findArea" resultType="House">
 				select * from   House where area=#{area}
 		</select>
+
+		<select id="listHouse" resultType="House">
+			select * from house
+			<where>
+				<if test="area != null " >
+					and area =#{area}
+				</if>
+				<if test="rentNum !=null">
+					and rentNum =#{rentNum}
+				</if>
+				<if test="rentPrice1 !=-1 and rentPrice2 !=-1">
+					and rentPrice between #{rentPrice1} and #{rentPrice2}
+				</if>
+				<if test="checkInDate !=null ">
+					and checkInDate >=#{checkInDate}
+				</if>
+				<if test="sex!=null">
+					and sex =#{sex}
+				</if>
+				<if test="way!=null">
+					and way =#{way}
+				</if>
+			</where>
+		</select>
 	</mapper>
 

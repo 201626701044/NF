@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+<!--命名空间-->
 	<mapper namespace="com.zoe.mapper.MemberMapper">
 
 	<!-- 添加 if(判断参数) - 将实体类 User 不为空的属性作为 where 条件

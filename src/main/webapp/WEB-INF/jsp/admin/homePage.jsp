@@ -27,33 +27,173 @@
     <script src="../js/all-house.js" type="text/javascript"></script>
     <!--<script src="../js/tools.js" type="text/javascript"></script>-->
     <style >
-
-    .activeLink {color:red;}
+        .activeLink {color:red;}
     </style>
 </head>
 <script >
     $(document).ready(function() {
-  //alert();
+        //alert();
 
         $(".lookfor").click(function() {
 
             $(".lookfor").removeClass("active");
             $(this).addClass("active");
 
-          alert($("#num1234 .active").attr("numLimit"));
-          alert($("#area1234 .active").attr("addlist"));
 
-          //alert($(this).attr("addlist"));
+            alert($("#area1234 .active").attr("addlist"));
+            alert($("#num1234 .active").attr("numLimit"));
+            alert($("#price1234 .active").attr("priceMin"));
+            alert($("#price1234 .active").attr("priceMax"));
+            alert($("#time1234 .active").attr("timeLimit"));
+            alert($("#sex1234 .active").attr("sexLimit"));
+            alert($("#way1234 .active").attr("wayLimit"));
 
-            $.get("<%=basePath%>list.controller",{alink:$(this).attr("addlist")} ,function(result){
-                alert(result);
-            });
+            $.get("<%=basePath%>queryHouse.controller",
+                {alink:$("#area1234 .active").attr("addlist"),
+                    numlink:$("#num1234  .active").attr("numLimit"),
+                    pricelink1:$("#price1234 .active").attr("priceMin"),
+                    pricelink2:$("#price1234 .active").attr("priceMax"),
+                    timelink:$("#time1234 .active").attr("timeLimit") ,
+                    sexlink:$("#sex1234 .active").attr("sexLimit"),
+                    waylink:$("#way1234 .active").attr("wayLimit")},function(result){
+                    alert(result);
+                });
+
+        });    //alert($(this).attr("addlist"));
+
+        $(".num").click(function(){
+            $(".num").removeClass("active");
+            $(this).addClass("active");
+
+            alert($("#area1234 .active").attr("addlist"));
+            alert($("#num1234 .active").attr("numLimit"));
+            alert($("#price1234 .active").attr("priceMin"));
+            alert($("#price1234 .active").attr("priceMax"));
+            alert($("#time1234 .active").attr("timeLimit"));
+            alert($("#sex1234 .active").attr("sexLimit"));
+            alert($("#way1234 .active").attr("wayLimit"));
 
 
-            $("#myframe").attr("src","<%=basePath%>houseList.controller?"+Math.random());
-
-
+            $.get("<%=basePath%>queryHouse.controller",
+                {alink:$("#area1234 .active").attr("addlist"),
+                    numlink:$("#num1234  .active").attr("numLimit"),
+                    pricelink1:$("#price1234 .active").attr("priceMin"),
+                    pricelink2:$("#price1234 .active").attr("priceMax"),
+                    timelink:$("#time1234 .active").attr("timeLimit") ,
+                    sexlink:$("#sex1234 .active").attr("sexLimit"),
+                    waylink:$("#way1234 .active").attr("wayLimit")},function(result){
+                    alert(result);
+                });
         });
+
+        $(".price").click(function(){
+            $(".price").removeClass("active");
+            $(this).addClass("active");
+
+            alert($("#area1234 .active").attr("addlist"));
+            alert($("#num1234 .active").attr("numLimit"));
+            alert($("#price1234 .active").attr("priceMin"));
+            alert($("#price1234 .active").attr("priceMax"));
+            alert($("#time1234 .active").attr("timeLimit"));
+            alert($("#sex1234 .active").attr("sexLimit"));
+            alert($("#way1234 .active").attr("wayLimit"));
+
+
+            $.get("<%=basePath%>queryHouse.controller",
+                {alink:$("#area1234 .active").attr("addlist"),
+                    numlink:$("#num1234  .active").attr("numLimit"),
+                    pricelink1:$("#price1234 .active").attr("priceMin"),
+                    pricelink2:$("#price1234 .active").attr("priceMax"),
+                    timelink:$("#time1234 .active").attr("timeLimit") ,
+                    sexlink:$("#sex1234 .active").attr("sexLimit"),
+                    waylink:$("#way1234 .active").attr("wayLimit")},function(result){
+                    alert(result);
+                });
+        });
+
+        $(".time").click(function(){
+            $(".time").removeClass("active");
+            $(this).addClass("active");
+
+            alert($("#area1234 .active").attr("addlist"));
+            alert($("#num1234 .active").attr("numLimit"));
+            alert($("#price1234 .active").attr("priceMin"));
+            alert($("#price1234 .active").attr("priceMax"));
+            alert($("#time1234 .active").attr("timeLimit"));
+            alert($("#sex1234 .active").attr("sexLimit"));
+            alert($("#way1234 .active").attr("wayLimit"));
+
+
+            $.get("<%=basePath%>queryHouse.controller",
+                {alink:$("#area1234 .active").attr("addlist"),
+                    numlink:$("#num1234  .active").attr("numLimit"),
+                    pricelink1:$("#price1234 .active").attr("priceMin"),
+                    pricelink2:$("#price1234 .active").attr("priceMax"),
+                    timelink:$("#time1234 .active").attr("timeLimit") ,
+                    sexlink:$("#sex1234 .active").attr("sexLimit"),
+                    waylink:$("#way1234 .active").attr("wayLimit")},function(result){
+                    alert(result);
+                });
+        });
+
+        $(".sex").click(function(){
+            $(".sex").removeClass("active");
+            $(this).addClass("active");
+
+            alert($("#area1234 .active").attr("addlist"));
+            alert($("#num1234 .active").attr("numLimit"));
+            alert($("#price1234 .active").attr("priceMin"));
+            alert($("#price1234 .active").attr("priceMax"));
+            alert($("#time1234 .active").attr("timeLimit"));
+            alert($("#sex1234 .active").attr("sexLimit"));
+            alert($("#way1234 .active").attr("wayLimit"));
+
+
+            $.get("<%=basePath%>queryHouse.controller",
+                {alink:$("#area1234 .active").attr("addlist"),
+                    numlink:$("#num1234  .active").attr("numLimit"),
+                    pricelink1:$("#price1234 .active").attr("priceMin"),
+                    pricelink2:$("#price1234 .active").attr("priceMax"),
+                    timelink:$("#time1234 .active").attr("timeLimit") ,
+                    sexlink:$("#sex1234 .active").attr("sexLimit"),
+                    waylink:$("#way1234 .active").attr("wayLimit")},function(result){
+                    alert(result);
+                });
+        });
+
+        $(".way").click(function(){
+            $(".way").removeClass("active");
+            $(this).addClass("active");
+
+            alert($("#area1234 .active").attr("addlist"));
+            alert($("#num1234 .active").attr("numLimit"));
+            alert($("#price1234 .active").attr("priceMin"));
+            alert($("#price1234 .active").attr("priceMax"));
+            alert($("#time1234 .active").attr("timeLimit"));
+            alert($("#sex1234 .active").attr("sexLimit"));
+            alert($("#way1234 .active").attr("wayLimit"));
+
+
+            $.get("<%=basePath%>queryHouse.controller",
+                {alink:$("#area1234 .active").attr("addlist"),
+                    numlink:$("#num1234  .active").attr("numLimit"),
+                    pricelink1:$("#price1234 .active").attr("priceMin"),
+                    pricelink2:$("#price1234 .active").attr("priceMax"),
+                    timelink:$("#time1234 .active").attr("timeLimit") ,
+                    sexlink:$("#sex1234 .active").attr("sexLimit"),
+                    waylink:$("#way1234 .active").attr("wayLimit")},function(result){
+                    alert(result);
+                });
+        });
+
+
+
+
+
+        // $("#myframe").attr("src","<%=basePath%>houseList.controller?"+Math.random());
+
+
+
     });
 
 </script>
@@ -122,21 +262,20 @@
             </div>
 
             <div class="sort-right" id="area1234">
-                <a  href="javaScript:;" class="active lookfor">不限</a>
-                <c:forEach items="${cs}" var="c">
-                    <a class="lookfor"  addlist="${c.area}"   href="javaScript:;" target="myframe" >${c.area}</a>
-                </c:forEach>
-                <%--<a href="#" class="">红谷滩</a>--%>
-                <%--<a href="#" class="">西湖</a>--%>
-                <%--<a href="#" class="">青山湖</a>--%>
-                <%--<a href="#" class="">高新区</a>--%>
-                <%--<a href="#" class="">高新区</a>--%>
-                <%--<a href="#" class="">南昌县</a>--%>
-                <%--<a href="#" class="">青云谱</a>--%>
-                <%--<a href="#" class="">经开区</a>--%>
-                <%--<a href="#" class="">湾里</a>--%>
-                <%--<a href="#" class="">进贤</a>--%>
-                <%--<a href="#" class="">安义</a>--%>
+                <a  href="javaScript:;" class="active lookfor" addlist="no">不限</a>
+                <%--<c:forEach items="${cs}" var="c">--%>
+                <%--<a class="lookfor"  addlist="${c.area}"   href="javaScript:;" target="myframe" >${c.area}</a>--%>
+                <%--</c:forEach>--%>
+                <a class="lookfor"  addlist="红谷滩"   href="javaScript:;" >红谷滩</a>
+                <a class="lookfor"  addlist="西湖"   href="javaScript:;" >西湖</a>
+                <a class="lookfor"  addlist="青山湖"   href="javaScript:;" >青山湖</a>
+                <a class="lookfor"  addlist="高新区"   href="javaScript:;" >高新区</a>
+                <a class="lookfor"  addlist="南昌县"   href="javaScript:;" >南昌县</a>
+                <a class="lookfor"  addlist="青云谱"   href="javaScript:;" >青云谱</a>
+                <a class="lookfor"  addlist="经开区"   href="javaScript:;" >经开区</a>
+                <a class="lookfor"  addlist="湾里"   href="javaScript:;" >湾里</a>
+                <a class="lookfor"  addlist="进贤"   href="javaScript:;" >进贤</a>
+                <a class="lookfor"  addlist="安义"   href="javaScript:;" >安义</a>
             </div>
 
         </div>
@@ -151,11 +290,11 @@
             </div>
 
             <div class="sort-right" id="num1234">
-                <a href="#" class="wither">不限</a>
-                <a href="#" class="wither  active"  numLimit="单人入住">单人入住</a>
-                <a href="#" class="wither">双人入住</a>
-                <a href="#" class="wither">三人入住</a>
-                <a href="#" class="wither">四人入住</a>
+                <a  href="javaScript:;" class="active num" numLimit="no">不限</a>
+                <a  href="javaScript:;"class="num"  numLimit="单人入住">单人入住</a>
+                <a  href="javaScript:;"class="num"  numLimit="双人入住">双人入住</a>
+                <a  href="javaScript:;"class="num"  numLimit="三人入住">三人入住</a>
+                <a  href="javaScript:;"class="num"  numLimit="四人入住">四人入住</a>
                 <a href="#" class="wither"><!--五室及以上--></a>
             </div>
 
@@ -169,16 +308,16 @@
                 <span class="">价格：</span>
             </div>
 
-            <div class="sort-right">
-                <a href="#" class="active">不限</a>
-                <a href="#" class="wither">500元以下</a>
-                <a href="#" class="wither">500-800元</a>
-                <a href="#" class="wither">800-1000元</a>
-                <a href="#" class="wither">1000-1500元</a>
-                <a href="#" class="wither">1500-2000元</a>
-                <a href="#" class="wither">2500-3000元</a>
-                <a href="#" class="wither">3000-4000元</a>
-                <a href="#" class="wither">4000及以上</a>
+            <div class="sort-right" id="price1234">
+                <a  href="javaScript:;" class="active price" priceMin="0" priceMax="50000">不限</a>
+
+                <a  href="javaScript:;" class="price" priceMin="0" priceMax="500">500元以下</a>
+                <a href="javaScript:;" class="price" priceMin="500" priceMax="1000">500-1000元</a>
+                <a href="javaScript:;" class="price" priceMin="1000" priceMax="1500">1000-1500元</a>
+                <a href="javaScript:;" class="price" priceMin="1500" priceMax="2000">1500-2000元</a>
+                <a href="javaScript:;" class="price" priceMin="2500" priceMax="3000">2500-3000元</a>
+                <a href="javaScript:;" class="price" priceMin="300" priceMax="4000">3000-4000元</a>
+                <a href="javaScript:;" class="price" priceMin="4000" priceMax="50000">4000元以上</a>
             </div>
 
         </div>
@@ -192,12 +331,12 @@
                 <span class="">时间：</span>
             </div>
 
-            <div class="sort-right">
-                <a href="#" class="active">不限</a>
-                <a href="#" class="wither">最近入住</a>
-                <a href="#" class="wither">一月后入住</a>
-                <a href="#" class="wither">两月后入住</a>
-                <a href="#" class="wither">三月后入住</a>
+            <div class="sort-right" id="time1234">
+                <a href="javaScript:;" class="active time" timeLimit="0">不限</a>
+                <a href="javaScript:;" class="time" timeLimit="0">最近入住</a>
+                <a href="javaScript:;" class="time" timeLimit="1">一月后入住</a>
+                <a href="javaScript:;" class="time" timeLimit="2">两月后入住</a>
+                <a href="javaScript:;" class="time" timeLimit="3">三月后入住</a>
                 <a href="#" class="wither"><!--五室及以上--></a>
             </div>
 
@@ -212,10 +351,10 @@
                 <span class="">性别：</span>
             </div>
 
-            <div class="sort-right">
-                <a href="#" class="active">不限</a>
-                <a href="#" class="">男</a>
-                <a href="#" class="">女</a>
+            <div class="sort-right" id="sex1234">
+                <a href="javaScript:;" class="active sex" sexLimit="no">不限</a>
+                <a href="javaScript:;" class="sex" sexLimit="男">男</a>
+                <a href="javaScript:;" class="sex" sexLimit="女">女</a>
             </div>
 
         </div>
@@ -228,10 +367,10 @@
                 <span class="">方式：</span>
             </div>
 
-            <div class="sort-right">
-                <a href="#" class="active">不限</a>
-                <a href="#" class="">室友合租</a>
-                <a href="#" class="">业主出租</a>
+            <div class="sort-right" id="way1234">
+                <a href="javaScript:;" class="active way" wayLimit="no">不限</a>
+                <a href="javaScript:;" class="way" wayLimit="室友合租">室友合租</a>
+                <a href="javaScript:;" class="way" wayLimit="业主出租">业主出租</a>
             </div>
 
         </div>
@@ -252,34 +391,34 @@
     <div class="title-line"></div>
 
     <!--第一栏房子-->
-    <c:forEach items="${area}" var="c">
-    <div class="content">
+    <c:forEach items="${cs}" var="c">
+        <div class="content">
 
-        <div class="content-left">
-            <div id="outer">
-                <!--房屋图片-->
-                <ul id="imgList">
-                    <li><img src="${c.image}" alt="" width="200px" height="300px"></li>
-                </ul>
+            <div class="content-left">
+                <div id="outer">
+                    <!--房屋图片-->
+                    <ul id="imgList">
+                        <li><img src="${c.image}" alt="" width="200px" height="300px"></li>
+                    </ul>
+                </div>
             </div>
+
+            <div class="content-right">
+                <div class="content-right-top">
+                    <p class="one"><a href="#">${c.houseName}</a></p>
+                    <p class="two">${c.houseType} </p>
+                    <span><img src="${c.image}" alt=""><p class="three">${c.area}</p></span>
+                    <p class="four"> </p>
+                </div>
+
+                <div class="content-right-bottom">
+                    <p class="five">${c.rentPrice}</p>
+                    <p class="photo">业主出租</p>
+                    <p class="six"><a href="#">查看详情</a> </p>
+                </div>
+            </div>
+
         </div>
-
-        <div class="content-right">
-            <div class="content-right-top">
-                <p class="one"><a href="#">${c.houseName}</a></p>
-                <p class="two">${c.houseType} </p>
-                <span><img src="${c.image}" alt=""><p class="three">${c.area}</p></span>
-                <p class="four"> </p>
-            </div>
-
-            <div class="content-right-bottom">
-                <p class="five">${c.rentPrice}</p>
-                <p class="photo">业主出租</p>
-                <p class="six"><a href="#">查看详情</a> </p>
-            </div>
-        </div>
-
-    </div>
     </c:forEach>
 </div>
 <div style="text-align:center">

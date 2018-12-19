@@ -29,6 +29,27 @@ public class MemberController {
     @Autowired
     MemberService memberService;
 
+    @RequestMapping("/clear")
+    public ModelAndView clear(HttpSession session) {
+        Integer i = (Integer) session.getAttribute("count");
+        if (i != null)
+            i = -1;
+        i++;
+        session.setAttribute("count1", i);
+        ModelAndView mav = new ModelAndView("showMember");
+        return mav;
+    }
+    @RequestMapping("/check")
+    public ModelAndView check(HttpSession session) {
+        Integer i = (Integer) session.getAttribute("count");
+        if (i == null)
+            i = 0;
+        i++;
+        session.setAttribute("count", i);
+        ModelAndView mav = new ModelAndView("showMember");
+        return mav;
+    }
+
     @RequestMapping("getMember")
     public ModelAndView add(Member member){
         ModelAndView mav=new ModelAndView("showMember");

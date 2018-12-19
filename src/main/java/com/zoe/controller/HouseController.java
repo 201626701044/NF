@@ -20,7 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 // 告诉spring mvc这是一个控制器类
 @Controller
@@ -30,15 +31,63 @@ public class HouseController {
     @Autowired
     HouseService houseService;
 
+//    @ResponseBody
+//    @RequestMapping("listHouse")
+//    public String listHouse(Model model,String alink) throws IOException {
+//
+//        List<House> houseList=houseService.findArea(alink);
+//
+//        model.addAttribute("houseList", houseList);
+//        return JSONObject.toJSON(houseList).toString();
+//    }
+
     @ResponseBody
-    @RequestMapping("list")
-    public String aaa(Model model,String alink) throws IOException {
+    @RequestMapping("queryHouse")
+    public String queryHouse(String alink,String numlink,int pricelink1,int pricelink2,String timelink,String sexlink,String waylink) {
 
-        List<House> houseList=houseService.findArea(alink);
+        Date now = new Date();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(now);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");//可以方便地修改日期格式
 
-        model.addAttribute("houseList", houseList);
+       if(timelink.equals("1")){
+            calendar.add(Calendar.MONTH,1); //把日期往后增加一个月,
+
+        }else if(timelink.equals("2")){
+            calendar.add(Calendar.MONTH,2); //把日期往后增加一个月,
+
+        }else if(timelink.equals("3")) {
+            calendar.add(Calendar.MONTH, 3); //把日期往后增加一个月,
+
+        }
+        Date date1=calendar.getTime(); //
+        timelink=dateFormat.format(date1);
+
+
+        if ("no".equals(sexlink)) sexlink=null;
+        if("no".equals(alink)) alink=null;
+        if ("no".equals(numlink)) numlink=null;
+        if ("no".equals(sexlink)) sexlink=null;
+        if("no".equals(waylink)) waylink=null;
+
+        List<House> houseList=houseService.listHouse(alink,numlink,pricelink1,pricelink2,timelink,sexlink,waylink);
+
+//        List<House> houseList=houseService.list();
+
+     //   model.addAttribute("houseList", houseList);
+        System.out.println(JSONObject.toJSON(houseList).toString());
         return JSONObject.toJSON(houseList).toString();
     }
+
+//    @ResponseBody
+//    @RequestMapping("list")
+//    public String aaa(Model model,String alink) throws IOException {
+//
+//        List<House> houseList=houseService.findArea(alink);
+//
+//        model.addAttribute("houseList", houseList);
+//        return JSONObject.toJSON(houseList).toString();
+//    }
 
     @RequestMapping("houseList")
     public String bbb(Model model,HttpServletRequest request) {
@@ -88,7 +137,6 @@ public class HouseController {
         model.addAttribute("cs", cs);
         return "admin/homePage";
     }
-
 
 
 }
