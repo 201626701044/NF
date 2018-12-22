@@ -13,10 +13,19 @@ public interface MemberMapper {
     List<Member> list1(@Param("memberName")String param1,@Param("memberPassword")String param2);
 
     public int findMemberByNameAndPwd(@Param("memberName")String param1,@Param("memberPassword")String param2);
-
+    //查询memberName是否存在
     public int validateMemberName(String memberName);
 
     public int add(Member member);
 
     public int findMemberByName(String memberName);
+
+
+    int existMembername(String memberName);
+
+    Member selectByPrimaryKey(int memberId);
+
+    int updateByPrimaryKeySelective(Member record);
+
+    public Member getMemberByName(@Param("memberName")String param1);
 }

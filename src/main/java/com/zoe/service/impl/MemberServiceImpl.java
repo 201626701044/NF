@@ -44,4 +44,24 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.findMemberByName(memberName);
 	}
 
+	@Override
+	public boolean existMembername(String memberName) {
+		return memberMapper.existMembername(memberName)==1;
+	}
+
+	@Override
+	public Member getMemberById(int memberId) {
+		return memberMapper.selectByPrimaryKey(memberId);
+	}
+
+	@Override
+	public boolean updateMember(Member member) {
+		return memberMapper.updateByPrimaryKeySelective(member)>0;
+	}
+
+	@Override
+	public Member getMemberByName(String memberName) {
+		return memberMapper.getMemberByName(memberName);
+	}
+
 }

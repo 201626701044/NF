@@ -15,7 +15,7 @@
     <td><input type="submit" value="member"></td>
 </form>
 <form action="${pageContext.request.contextPath }/admin_house_list.controller">
-    <td><input type="submit" value="house"></td>
+    <td><input type="submit" value="houselist"></td>
 </form>
 <form action="${pageContext.request.contextPath }/request/admin_rentrequest_list.controller">
     <td><input type="submit" value="request"></td>

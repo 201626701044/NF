@@ -5,10 +5,19 @@ public class Member {
 
     private int member_ID;
     private String member_name;
+    private String member_image;
     private String member_password;
     private String member_sex;
     private String member_idcard;
     private String member_phone;
+
+    public String getMember_image() {
+        return member_image;
+    }
+
+    public void setMember_image(String member_image) {
+        this.member_image = member_image;
+    }
 
     public int getMember_ID() {
         return member_ID;
@@ -66,11 +75,15 @@ public class Member {
         this.member_email = member_email;
     }
 
+
+    private String member_email;
+
     @Override
     public String toString() {
         return "Member{" +
                 "member_ID=" + member_ID +
                 ", member_name='" + member_name + '\'' +
+                ", member_image='" + member_image + '\'' +
                 ", member_password='" + member_password + '\'' +
                 ", member_sex='" + member_sex + '\'' +
                 ", member_idcard='" + member_idcard + '\'' +
@@ -78,8 +91,4 @@ public class Member {
                 ", member_email='" + member_email + '\'' +
                 '}';
     }
-
-    private String member_email;
-
-
 }

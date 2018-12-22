@@ -18,5 +18,22 @@ public interface MemberService {
 	public int add(Member member);
 
 	public int findMemberByName(String memberName);
+	/**
+	 * 检查memberName是否存在
+	 * @param memberName
+	 * @return
+	 */
+	public boolean existMembername(String memberName);
+
+	/**
+	 * 获取用户信息
+	 * @param memberId
+	 * @return
+	 */
+	public Member getMemberById(int memberId);
+
+	public boolean updateMember(Member member);
+
+	public Member getMemberByName(String memberName);
 }
 

@@ -5,20 +5,6 @@
 <!--命名空间-->
 	<mapper namespace="com.zoe.mapper.MemberMapper">
 
-	<!-- 添加 if(判断参数) - 将实体类 User 不为空的属性作为 where 条件
-	<select id="getMemberList" resultMap="resultMap_Member" parameterType="Member">
-		SELECT m.member_name,
-		m.member_password,
-		FROM member m
-		WHERE
-		<if test="member_name !=null ">
-			m.member_name LIKE CONCAT(CONCAT('%', #{member_name, jdbcType=VARCHAR}),'%')
-		</if>
-		<if test="member_password != null  ">
-			AND m.member_password = #{m.member_password, jdbcType=INTEGER}
-		</if>
-	</select>
--->
 	<select id="list" resultType="Member">
 			select * from   member order by member_ID desc
 	  	</select>
@@ -39,6 +25,21 @@
 		<!-- 登录验证-->
 		<select id="findMemberByName" resultType="int">
 			select count(*) from member where member_name=#{memberName}
+		</select>
+		<!--注册验证-->
+		<select id="existMembername" resultType="int">
+				select count(*) from member where member_name=#{memberName}
+			</select>
+		<select id="selectByPrimaryKey" resultType="Member">
+				select * from   member where member_ID =#{memberId}
+			</select>
+	<update id="updateByPrimaryKeySelective" parameterType="Member" >
+		update member set member_image =#{member_image}
+		where member_name=#{member_name}
+	</update>
+	<!-- 登录验证-->
+	<select id="getMemberByName" resultType="Member">
+			select * from member where member_name=#{memberName}
 		</select>
 	</mapper>
 

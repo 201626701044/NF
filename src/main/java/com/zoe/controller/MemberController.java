@@ -7,16 +7,18 @@ import com.zoe.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +30,47 @@ public class MemberController {
 
     @Autowired
     MemberService memberService;
+
+    @RequestMapping(value = "/settings/avatar")
+    public ModelAndView updateAvatar(HttpSession session){
+
+        session.getAttribute("memberName");
+        ModelAndView mv=new ModelAndView("update_avatar");
+
+        return mv;
+    }
+
+    @RequestMapping(value = "/settings/avatar/update")
+    public ModelAndView updateAvatarDo(@RequestPart("avatar") MultipartFile avatarFile, HttpSession session){
+       String memberName=(String ) session.getAttribute("memberName");
+
+        String fileName=avatarFile.getOriginalFilename();
+        String suffix=fileName.substring(fileName.lastIndexOf(".")+1, fileName.length());
+        Long date=new Date().getTime();
+        String newFileName=date+"-"+memberName+"."+suffix;
+        String absolutePath=session.getServletContext().getRealPath("/img/avatar")+"/"+newFileName;
+        String relativePath="/img/avatar"+"/"+newFileName;
+        Member newMember=new Member();
+        newMember.setMember_image(relativePath);
+        newMember.setMember_name(memberName);
+        File file=new File(absolutePath);
+
+        if (!file.exists()){
+            try {
+                avatarFile.transferTo(file);
+                memberService.updateMember(newMember);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        Member member=memberService.getMemberByName(memberName);
+
+        ModelAndView mv=new ModelAndView("update_avatar");
+        mv.addObject("member",member);
+
+        return mv;
+    }
 
     @RequestMapping("/clear")
     public ModelAndView clear(HttpSession session) {
@@ -146,7 +189,7 @@ public class MemberController {
             HttpSession session = request.getSession();
             session.setAttribute("memberName",memberName);
             session.setAttribute("memberPassword",memberPassword);
-            return "index";
+            return "settings";
         }else {
             return "login2";
         }
