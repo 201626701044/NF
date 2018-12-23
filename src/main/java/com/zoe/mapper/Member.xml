@@ -12,7 +12,7 @@
 			select * from   member where member_name=#{memberName} and member_password=#{memberPassword}
 	  	</select>
 		<insert id="add" parameterType="Member" >
-	        insert into member ( member_name, member_password) values (#{memberName},#{memberPassword})
+	        insert into member ( member_name, member_password) values (#{member_name},#{member_password})
 	    </insert>
 		<!-- 登录验证-->
 		<select id="findMemberByNameAndPwd" resultType="int">
@@ -24,7 +24,7 @@
 		</select>
 		<!-- 登录验证-->
 		<select id="findMemberByName" resultType="int">
-			select count(*) from member where member_name=#{memberName}
+			select count(*) from member where member_name=#{member_name}
 		</select>
 		<!--注册验证-->
 		<select id="existMembername" resultType="int">

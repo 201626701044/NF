@@ -20,4 +20,9 @@ public interface HouseMapper {
     public  List<House> listHouse(@Param("area")String param1,@Param("rentNum")String param2 ,
                                   @Param("rentPrice1")int param3,@Param("rentPrice2")int param4,
                                   @Param("checkInDate")String param5,@Param("sex")String param6,@Param("way")String param7);
+
+    public List<House> insert(int rentPrice);
+
+
+    public int add(House house);
 }

@@ -40,8 +40,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int findMemberByName(String memberName) {
-		return memberMapper.findMemberByName(memberName);
+	public int findMemberByName(String member_name) {
+		return memberMapper.findMemberByName(member_name);
 	}
 
 	@Override

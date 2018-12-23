@@ -10,7 +10,9 @@
 		<select id="findArea" resultType="House">
 				select * from   House where area=#{area}
 		</select>
-
+	<insert id="insert" parameterType="House" >
+	        insert into house ( rentPrice) values (#{rentPrice})
+	    </insert>
 		<select id="listHouse" resultType="House">
 			select * from house
 			<where>
@@ -34,5 +36,9 @@
 				</if>
 			</where>
 		</select>
+		<insert id="add" parameterType="House" >
+			insert into house (houseName,rentPrice,checkInDate,houseType,area,rentNum,image,way)
+			VALUES (#{houseName},#{rentPrice},#{checkInDate},#{houseType},#{area},#{rentNum},#{image},#{way})
+	    </insert>
 	</mapper>
 

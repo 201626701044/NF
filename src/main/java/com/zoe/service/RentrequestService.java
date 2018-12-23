@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RentrequestService {
 
-	List<Rentrequest> list();
+	public List<Rentrequest> list();
 
 }
 

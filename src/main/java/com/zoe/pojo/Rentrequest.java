@@ -8,6 +8,42 @@ public class Rentrequest {
     private float budget;
     private String city;
     private String mateSex;
+    private String nickname;
+    private String job;
+    private String image;
+    private String mateCharacter;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getMateCharacter() {
+        return mateCharacter;
+    }
+
+    public void setMateCharacter(String mateCharacter) {
+        this.mateCharacter = mateCharacter;
+    }
 
     public int getReqId() {
         return reqId;
@@ -75,6 +111,10 @@ public class Rentrequest {
                 ", budget=" + budget +
                 ", city='" + city + '\'' +
                 ", mateSex='" + mateSex + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", job='" + job + '\'' +
+                ", image='" + image + '\'' +
+                ", mateCharacter='" + mateCharacter + '\'' +
                 '}';
     }
 }

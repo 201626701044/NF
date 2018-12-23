@@ -17,7 +17,7 @@ public interface MemberService {
 
 	public int add(Member member);
 
-	public int findMemberByName(String memberName);
+	public int findMemberByName(String member_name);
 	/**
 	 * 检查memberName是否存在
 	 * @param memberName

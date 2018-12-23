@@ -54,7 +54,7 @@ public class MemberController {
         newMember.setMember_image(relativePath);
         newMember.setMember_name(memberName);
         File file=new File(absolutePath);
-
+        System.out.println("------------------"+absolutePath);
         if (!file.exists()){
             try {
                 avatarFile.transferTo(file);
@@ -166,21 +166,21 @@ public class MemberController {
 
     @RequestMapping("regist")
     public String regist(Member member,HttpServletRequest request) {
-        String memberName = request.getParameter("memberName");
-        int num = memberService.findMemberByName(memberName);
+        String member_name = request.getParameter("member_name");
+        int num = memberService.findMemberByName(member_name);
         if (num > 0) {
             return "regfailed";
         } else {
             //合法用户
             memberService.add(member);
             HttpSession session = request.getSession();
-            session.setAttribute("memberName", memberName);
+            session.setAttribute("member_name", member_name);
             //return "success";
             return "regsuccess";
         }
     }
     @RequestMapping("login")
-    public String memberLogin2(HttpServletRequest request) {
+    public String memberLogin2(HttpServletRequest request,HttpServletResponse response) throws IOException {
         String memberName = request.getParameter("memberName");
         String memberPassword = request.getParameter("memberPassword");
         int num = memberService.findMemberByNameAndPwd(memberName,memberPassword);
@@ -189,7 +189,9 @@ public class MemberController {
             HttpSession session = request.getSession();
             session.setAttribute("memberName",memberName);
             session.setAttribute("memberPassword",memberPassword);
-            return "settings";
+          //  return "settings";
+            response.sendRedirect(request.getContextPath()+"/admin_house_list");
+            return "loginsuccess";
         }else {
             return "login2";
         }

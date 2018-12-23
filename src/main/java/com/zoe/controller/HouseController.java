@@ -67,42 +67,20 @@ public class HouseController {
         JSONArray array = new JSONArray();
         List<House> houseList = houseService.listHouse(alink, numlink, pricelink1, pricelink2, timelink, sexlink, waylink);
 
-//        List<House> houseList=houseService.list();
+        System.out.println(JSONObject.toJSON(houseList).toString());
+        return JSONObject.toJSON(houseList).toString();
 
-        //   model.addAttribute("houseList", houseList);
-        //     System.out.println(JSONObject.toJSON(houseList).toString());
-//        return JSONObject.toJSON(houseList).toString();
-
-        response.setCharacterEncoding("utf-8");
-        PrintWriter out = response.getWriter();
-
-        String listJson = JSONObject.toJSONString(houseList);
-        System.out.println(listJson);
-//        System.out.println("111111111111111111111111111111111111111111111111111111111111111111");
-        out.print(listJson);
-        return null;
-    }
-
-//    @ResponseBody
-//    @RequestMapping("list")
-//    public String aaa(Model model,String alink) throws IOException {
+//        response.setCharacterEncoding("utf-8");
+//        PrintWriter out = response.getWriter();
 //
-//        List<House> houseList=houseService.findArea(alink);
-//
-//        model.addAttribute("houseList", houseList);
-//        return JSONObject.toJSON(houseList).toString();
-//    }
-
-    @RequestMapping("houseList")
-    public String bbb(Model model,HttpServletRequest request) {
-        String addlist=request.getParameter("addlist");
-//        String area =houseService.findArea(addlist);
-//        model.addAttribute("area",area);
-        return "admin/homePage";
+//        String listJson = JSONObject.toJSONString(houseList);
+//        System.out.println(listJson);
+//        out.print(listJson);
+//        return null;
     }
 
 
-        @ResponseBody
+    @ResponseBody
     @RequestMapping(produces="text/html;charset=UTF-8", value = "/getManyHouses")
     public String getManyHouses(Model model) {
         List<House> cs = houseService.list();
@@ -143,5 +121,12 @@ public class HouseController {
 //        return "admin/homePage001";
     }
 
+    @RequestMapping("addhouse")
+    public String add(House house) {
+
+        houseService.add(house);
+        return "admin/index";
+
+    }
 
 }

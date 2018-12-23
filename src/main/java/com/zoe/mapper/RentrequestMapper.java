@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RentrequestMapper {
 
-    List<Rentrequest> list();
+    public List<Rentrequest> list();
     //根据房源ID得到对应的多个请求
     List<Rentrequest> listAndRequest(int houseID);
 

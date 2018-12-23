@@ -34,50 +34,50 @@
     <script type="text/javascript">
         $(document).ready(function() {
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(msg){--%>
-                    <%--if (msg) {--%>
-                        <%--alert(msg);--%>
-                        <%--var result = eval(msg);--%>
-                        <%--alert(result[0].area);--%>
-                        <%--if (result) {--%>
-                            <%--var content = "";--%>
-                            <%--for (var i = 0; i < result.length; i++) {--%>
-                                <%--content += "<div id='listHouse'>" +--%>
-                                    <%--"    <!--第一栏房子-->" +--%>
-                                    <%--"        <div class='content'>" +--%>
-                                    <%--"            <div class='content-left'>" +--%>
-                                    <%--"                <div id='outer'>" +--%>
-                                    <%--"                    <!--房屋图片-->" +--%>
-                                    <%--"                    <ul id='imgList'>" +--%>
-                                    <%--"                        <li><img src='" + result[i].image + "' alt='' width='200px' height='300px'></li>" +--%>
-                                    <%--"                    </ul>" +--%>
-                                    <%--"                </div>" +--%>
-                                    <%--"            </div>" +--%>
-                                    <%--"            <div class='content-right'>" +--%>
-                                    <%--"                <div class='content-right-top'>" +--%>
-                                    <%--"                    <p class='one'><a href='#'>" + result[i].houseName + "</a></p>" +--%>
-                                    <%--"                    <p class='two'>" + result[i].houseType + "</p>" +--%>
-                                    <%--"                    <span><img src='" + result[i].image + "' alt=''><p class='three'>" + result[i].area +"</p></span>" +--%>
-                                    <%--"                    <p class='four'> </p>" +--%>
-                                    <%--"                </div>" +--%>
-                                    <%--"                <div class='content-right-bottom'>" +--%>
-                                    <%--"                    <p class='five'>" + result[i].rentPrice + "</p>" +--%>
-                                    <%--"                    <p class='photo'>业主出租</p>" +--%>
-                                    <%--"                    <p class='six'><a href='#'>查看详情</a> </p>" +--%>
-                                    <%--"                </div>" +--%>
-                                    <%--"            </div>" +--%>
-                                    <%--"        </div>" +--%>
-                                    <%--"</div>"--%>
-                            <%--}--%>
-                        <%--$("#listHouse").html(content);--%>
-                    <%--}--%>
-                <%--}--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(msg){--%>
+            <%--if (msg) {--%>
+            <%--alert(msg);--%>
+            <%--var result = eval(msg);--%>
+            <%--alert(result[0].area);--%>
+            <%--if (result) {--%>
+            <%--var content = "";--%>
+            <%--for (var i = 0; i < result.length; i++) {--%>
+            <%--content += "<div id='listHouse'>" +--%>
+            <%--"    <!--第一栏房子-->" +--%>
+            <%--"        <div class='content'>" +--%>
+            <%--"            <div class='content-left'>" +--%>
+            <%--"                <div id='outer'>" +--%>
+            <%--"                    <!--房屋图片-->" +--%>
+            <%--"                    <ul id='imgList'>" +--%>
+            <%--"                        <li><img src='" + result[i].image + "' alt='' width='200px' height='300px'></li>" +--%>
+            <%--"                    </ul>" +--%>
+            <%--"                </div>" +--%>
+            <%--"            </div>" +--%>
+            <%--"            <div class='content-right'>" +--%>
+            <%--"                <div class='content-right-top'>" +--%>
+            <%--"                    <p class='one'><a href='#'>" + result[i].houseName + "</a></p>" +--%>
+            <%--"                    <p class='two'>" + result[i].houseType + "</p>" +--%>
+            <%--"                    <span><img src='" + result[i].image + "' alt=''><p class='three'>" + result[i].area +"</p></span>" +--%>
+            <%--"                    <p class='four'> </p>" +--%>
+            <%--"                </div>" +--%>
+            <%--"                <div class='content-right-bottom'>" +--%>
+            <%--"                    <p class='five'>" + result[i].rentPrice + "</p>" +--%>
+            <%--"                    <p class='photo'>业主出租</p>" +--%>
+            <%--"                    <p class='six'><a href='#'>查看详情</a> </p>" +--%>
+            <%--"                </div>" +--%>
+            <%--"            </div>" +--%>
+            <%--"        </div>" +--%>
+            <%--"</div>"--%>
+            <%--}--%>
+            <%--$("#listHouse").html(content);--%>
+            <%--}--%>
+            <%--}--%>
             <%--})--%>
         });
     </script>
@@ -146,47 +146,47 @@
                 })
 
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
-                    <%--alert(result);--%>
-                    <%--if (result) {--%>
-                        <%--var content = "";--%>
-                        <%--for (var i = 0; i < result.length; i++) {--%>
-                            <%--content += "<div id='listHouse'>" +--%>
-                                <%--"    <!--第一栏房子-->" +--%>
-                                <%--"        <div class='content'>" +--%>
-                                <%--"            <div class='content-left'>" +--%>
-                                <%--"                <div id='outer'>" +--%>
-                                <%--"                    <!--房屋图片-->" +--%>
-                                <%--"                    <ul id='imgList'>" +--%>
-                                <%--"                        <li><img src='" + result[i].image + "' alt='' width='200px' height='300px'></li>" +--%>
-                                <%--"                    </ul>" +--%>
-                                <%--"                </div>" +--%>
-                                <%--"            </div>" +--%>
-                                <%--"            <div class='content-right'>" +--%>
-                                <%--"                <div class='content-right-top'>" +--%>
-                                <%--"                    <p class='one'><a href='#'>" + result[i].houseName + "</a></p>" +--%>
-                                <%--"                    <p class='two'>" + result[i].houseType + "</p>" +--%>
-                                <%--"                    <span><img src='" + result[i].image + "' alt=''><p class='three'>" + result[i].area +"</p></span>" +--%>
-                                <%--"                    <p class='four'> </p>" +--%>
-                                <%--"                </div>" +--%>
-                                <%--"                <div class='content-right-bottom'>" +--%>
-                                <%--"                    <p class='five'>" + result[i].rentPrice + "</p>" +--%>
-                                <%--"                    <p class='photo'>业主出租</p>" +--%>
-                                <%--"                    <p class='six'><a href='#'>查看详情</a> </p>" +--%>
-                                <%--"                </div>" +--%>
-                                <%--"            </div>" +--%>
-                                <%--"        </div>" +--%>
-                                <%--"</div>"--%>
-                        <%--}--%>
-                        <%--$("#listHouse").html(content);--%>
-                    <%--}--%>
-                <%--});--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
+            <%--alert(result);--%>
+            <%--if (result) {--%>
+            <%--var content = "";--%>
+            <%--for (var i = 0; i < result.length; i++) {--%>
+            <%--content += "<div id='listHouse'>" +--%>
+            <%--"    <!--第一栏房子-->" +--%>
+            <%--"        <div class='content'>" +--%>
+            <%--"            <div class='content-left'>" +--%>
+            <%--"                <div id='outer'>" +--%>
+            <%--"                    <!--房屋图片-->" +--%>
+            <%--"                    <ul id='imgList'>" +--%>
+            <%--"                        <li><img src='" + result[i].image + "' alt='' width='200px' height='300px'></li>" +--%>
+            <%--"                    </ul>" +--%>
+            <%--"                </div>" +--%>
+            <%--"            </div>" +--%>
+            <%--"            <div class='content-right'>" +--%>
+            <%--"                <div class='content-right-top'>" +--%>
+            <%--"                    <p class='one'><a href='#'>" + result[i].houseName + "</a></p>" +--%>
+            <%--"                    <p class='two'>" + result[i].houseType + "</p>" +--%>
+            <%--"                    <span><img src='" + result[i].image + "' alt=''><p class='three'>" + result[i].area +"</p></span>" +--%>
+            <%--"                    <p class='four'> </p>" +--%>
+            <%--"                </div>" +--%>
+            <%--"                <div class='content-right-bottom'>" +--%>
+            <%--"                    <p class='five'>" + result[i].rentPrice + "</p>" +--%>
+            <%--"                    <p class='photo'>业主出租</p>" +--%>
+            <%--"                    <p class='six'><a href='#'>查看详情</a> </p>" +--%>
+            <%--"                </div>" +--%>
+            <%--"            </div>" +--%>
+            <%--"        </div>" +--%>
+            <%--"</div>"--%>
+            <%--}--%>
+            <%--$("#listHouse").html(content);--%>
+            <%--}--%>
+            <%--});--%>
 
         });    //alert($(this).attr("addlist"));
 
@@ -250,15 +250,15 @@
                 })
 
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
-                    <%--alert(result);--%>
-                <%--});--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
+            <%--alert(result);--%>
+            <%--});--%>
         });
 
         $(".price").click(function(){
@@ -321,15 +321,15 @@
                     }
                 })
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
-                    <%--alert(result);--%>
-                <%--});--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
+            <%--alert(result);--%>
+            <%--});--%>
         });
 
         $(".time").click(function(){
@@ -392,15 +392,15 @@
                 })
 
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
-                    <%--alert(result);--%>
-                <%--});--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
+            <%--alert(result);--%>
+            <%--});--%>
         });
 
         $(".sex").click(function(){
@@ -463,15 +463,15 @@
                     }
                 })
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
-                    <%--alert(result);--%>
-                <%--});--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
+            <%--alert(result);--%>
+            <%--});--%>
         });
 
         $(".way").click(function(){
@@ -534,15 +534,15 @@
                 })
 
             <%--$.get("<%=basePath%>queryHouse.controller",--%>
-                <%--{alink:$("#area1234 .active").attr("addlist"),--%>
-                    <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
-                    <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
-                    <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
-                    <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
-                    <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
-                    <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
-                    <%--alert(result);--%>
-                <%--});--%>
+            <%--{alink:$("#area1234 .active").attr("addlist"),--%>
+            <%--numlink:$("#num1234  .active").attr("numLimit"),--%>
+            <%--pricelink1:$("#price1234 .active").attr("priceMin"),--%>
+            <%--pricelink2:$("#price1234 .active").attr("priceMax"),--%>
+            <%--timelink:$("#time1234 .active").attr("timeLimit") ,--%>
+            <%--sexlink:$("#sex1234 .active").attr("sexLimit"),--%>
+            <%--waylink:$("#way1234 .active").attr("wayLimit")},function(result){--%>
+            <%--alert(result);--%>
+            <%--});--%>
         });
 
 
@@ -558,7 +558,15 @@
 </script>
 
 <body>
-<%@include file="top.jsp" %>
+
+<div class="header">
+    <span class="word">客服电话：4000-888-888</span>
+    <ul>
+        <li><a href="#">用户帮助</a></li>
+        <li ><a href="#">welcome，${member_name},${memberName}</a></li>
+        <li ><a href="#">注销</a></li>
+    </ul>
+</div>
 
 
 <div class="main">
@@ -734,46 +742,44 @@
         <ul>
             <li><a href="#" class="all" >房源信息</a></li>
             <li class="shipin2"><a href="requestPage.jsp" >求租信息</a></li>
-            <li class="shipin2"><a href="pushhouse.jsp" >发布房源</a></li>
-            <li class="shipin2"><a href="pushrequest.jsp" >发布求租</a></li>
             <!--<li class="shipin2"><a href="#" ><img class="shipin" src="../img/index.img/shipin.png" alt=""><span class="shipin1">视频看房</span></a></li>-->
             <!--<li><a href="found.html" >我要求租</a></li>-->
             <!--<li><a href="#" >个性推荐</a></li>-->
         </ul>
     </div>
     <div class="title-line"></div>
-<div id="listHouse">
-    <!--第一栏房子-->
-    <c:forEach items="${cs}" var="c">
-        <div class="content">
+    <div id="listHouse">
+        <!--第一栏房子-->
+        <c:forEach items="${cs}" var="c">
+            <div class="content">
 
-            <div class="content-left">
-                <div id="outer">
-                    <!--房屋图片-->
-                    <ul id="imgList">
-                        <li><img src="${c.image}" alt="" width="200px" height="300px"></li>
-                    </ul>
+                <div class="content-left">
+                    <div id="outer">
+                        <!--房屋图片-->
+                        <ul id="imgList">
+                            <li><img src="${c.image}" alt="" width="200px" height="300px"></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="content-right">
+                    <div class="content-right-top">
+                        <p class="one"><a href="#">${c.houseName}</a></p>
+                        <p class="two">${c.houseType} </p>
+                        <span><img src="${c.image}" alt=""><p class="three">${c.area}</p></span>
+                        <p class="four"> </p>
+                    </div>
+
+                    <div class="content-right-bottom">
+                        <p class="five">${c.rentPrice}</p>
+                        <p class="photo">业主出租</p>
+                        <p class="six"><a href="#">查看详情</a> </p>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="content-right">
-                <div class="content-right-top">
-                    <p class="one"><a href="#">${c.houseName}</a></p>
-                    <p class="two">${c.houseType} </p>
-                    <span><img src="${c.image}" alt=""><p class="three">${c.area}</p></span>
-                    <p class="four"> </p>
-                </div>
-
-                <div class="content-right-bottom">
-                    <p class="five">${c.rentPrice}</p>
-                    <p class="photo">业主出租</p>
-                    <p class="six"><a href="#">查看详情</a> </p>
-                </div>
-            </div>
-
-        </div>
-    </c:forEach>
-</div>
+        </c:forEach>
+    </div>
 </div>
 <div style="text-align:center">
     <a href="?start=1">首页</a>

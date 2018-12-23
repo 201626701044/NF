@@ -18,7 +18,7 @@ public interface MemberMapper {
 
     public int add(Member member);
 
-    public int findMemberByName(String memberName);
+    public int findMemberByName(String member_name);
 
 
     int existMembername(String memberName);

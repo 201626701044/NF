@@ -56,7 +56,15 @@
 
 </head>
 <body>
-<%@include file="top.jsp" %>
+
+<div class="header">
+    <span class="word">客服电话：4000-888-888</span>
+    <ul>
+        <li><a href="#">用户帮助</a></li>
+        <li ><a href="#">注册</a></li>
+        <li ><a href="#">登录</a></li>
+    </ul>
+</div>
 
 <div class="top">
     <div class="top-left" >
@@ -76,29 +84,56 @@
 </div>
 
 <div class="main">
-    <c:forEach items="${cs}" var="c">
+
     <div id="to-fount-tip" class="content">
         <div class="cont-top">
-            <img class="photo" src="${c.image}" alt="">
+            <img class="photo" src="img/found/01cus.png" alt="">
             <div class="name">
-                <a class="a-one" href="#">${c.nickname}</a><br>
-                <a class="a-two">${c.job}</a>
+                <a class="a-one" href="#">天间一袭袍</a><br>
+                <a class="a-two">软件工程师</a>
             </div>
-            <a class="date">${c.reqTime}</a>
+            <a class="date">18.12.2</a>
             <hr>
         </div>
 
         <div class="cont-middle">
-            <p class="title1">￥${c.budget}</p>
+            <p class="title1">￥1400</p>
             <p class="title2">一个月后入住</p>
             <a class="title3"><img src="img/house/address.png" >昌东镇</a>
         </div>
 
         <div class="cont-bottom">
-            ${c.mateCharacter}
+            要求室友安静，会编程者优先
         </div>
     </div>
-    </c:forEach>
+
+    <div id="to-fount-tip01" class="content">
+        <div class="cont-top">
+            <img class="photo" src="img/found/01cus.png" alt="">
+            <div class="name">
+                <a class="a-one" href="#">天间一袭袍</a><br>
+                <a class="a-two">软件工程师</a>
+            </div>
+            <a class="date">18.12.2</a>
+            <hr>
+        </div>
+
+        <div class="cont-middle">
+            <p class="title1">￥1400</p>
+            <p class="title2">一个月后入住</p>
+            <a class="title3"><img src="img/house/address.png" >昌东镇</a>
+        </div>
+
+        <div class="cont-bottom">
+            要求室友安静，会编程者优先
+        </div>
+    </div>
+
+    <div class="content"></div>
+    <div class="content"></div>
+
+</div>
+
 <!--个人提示-->
 
 <div  class="found-tip">

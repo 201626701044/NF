@@ -34,7 +34,7 @@ public class RentrequestController {
     public String list(Model model) {
         List<Rentrequest> cs = rentrequestService.list();
         model.addAttribute("cs", cs);
-        return "admin/listRentrequest";
+        return "admin/requestPage";
     }
 
 }

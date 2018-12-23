@@ -67,14 +67,14 @@
 
                 <div class="blank">
                     <label>用户名&nbsp;&nbsp;</label>
-                    <input id="mname"  class="register_in" type="text" name="memberName" placeholder="请输入用户名">
+                    <input id="mname"  class="register_in" type="text" name="member_name" placeholder="请输入用户名">
                     <font id="myFont" color="red">*</font>
                 </div>
                 <div class="wrong" id="cuo1">用户名不能为空</div>
 
                 <div class="blank">
                     <label>密码&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input id="mima" class="register_in"  type="password" name="memberPassword" placeholder="请输入密码">
+                    <input id="mima" class="register_in"  type="password" name="member_password" placeholder="请输入密码">
                 </div>
                 <div class="wrong" id="cuo2">密码由6-12个字母、数字、下划线组成</div>
 
@@ -102,13 +102,13 @@
             <form action="${pageContext.request.contextPath }/member/regist.controller" method="post">
                 <div class="blank">
                     <label>用户名&nbsp;&nbsp;</label>
-                    <input id="mname1"  class="register_in" type="text" name="memberName" placeholder="请输入用户名">
+                    <input id="mname1"  class="register_in" type="text" name="member_name" placeholder="请输入用户名">
                 </div>
                 <div class="wrong" id="re-cuo1">用户名不能为空</div>
 
                 <div class="blank">
                     <label>密码&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input id="re-mima" class="register_in"  type="password" name="memberPassword" placeholder="请输入密码">
+                    <input id="re-mima" class="register_in"  type="password" name="member_password" placeholder="请输入密码">
                 </div>
                 <div class="wrong" id="re-cuo2">密码由6-12个字母、数字、下划线组成</div>
 

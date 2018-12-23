@@ -57,4 +57,14 @@ public class HouseServiceImpl implements HouseService {
 		return houses;
 	}
 
+	@Override
+	public List<House> insert(int rentPrice) {
+		return houseMapper.insert(rentPrice);
+	}
+
+	@Override
+	public int add(House house) {
+		return houseMapper.add(house);
+	}
+
 }
