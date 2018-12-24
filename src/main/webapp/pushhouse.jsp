@@ -16,6 +16,26 @@
     <script src="js/pushhouse.js" type="text/javascript"></script>
 
 </head>
+
+<style>
+    .form-div {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .img-div {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .img-div img {
+        border: none;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 12px;
+    }
+</style>
 <body>
 
 <div class="header">
@@ -46,7 +66,7 @@
 </div>
 
 <div class="pushhouse">
-    <form action="${pageContext.request.contextPath }/addhouse.controller" method="post">
+
     <div class="first">房源发布</div>
     <hr class="first-line">
     <ul class="push-ul">
@@ -81,7 +101,11 @@
         </li>
         <li>
             <span class="push-describe"> 照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片</span>
-            <input class="push-photos" type="file" name="image" >
+            <form action="/upload-file.do" method="post" enctype="multipart/form-data">
+                <input type="file" name="multipartFile"/>
+                <button type="submit">上传</button>
+            </form>
+            <img src="uploadFile/${sessionScope.imgPath}" alt="等待上传..." onerror="this.style.display='none'"/>
         </li>
         <li>
             <span class="push-describe"> 方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;式</span>
@@ -100,7 +124,7 @@
             <input class="push-submit" type="submit" value="提交" name="确认">
         </li>
     </ul>
-    </form>
+
 </div>
 
 

@@ -5,15 +5,22 @@
 <!--命名空间-->
 	<mapper namespace="com.zoe.mapper.MemberMapper">
 
+	<!-- 注册验证-->
+		<select id="findMemberByName" resultType="int">
+			select count(*) from member where member_name=#{member_name}
+		</select>
+	<!--注册-->
+		<insert id="add" parameterType="Member" >
+	        insert into member ( member_name, member_password) values (#{member_name},#{member_password})
+	    </insert>
+
 	<select id="list" resultType="Member">
 			select * from   member order by member_ID desc
 	  	</select>
 		<select id="list1" resultType="Member">
 			select * from   member where member_name=#{memberName} and member_password=#{memberPassword}
 	  	</select>
-		<insert id="add" parameterType="Member" >
-	        insert into member ( member_name, member_password) values (#{member_name},#{member_password})
-	    </insert>
+
 		<!-- 登录验证-->
 		<select id="findMemberByNameAndPwd" resultType="int">
 			select count(*) from member where member_name=#{memberName} and member_password=#{memberPassword}
@@ -22,10 +29,7 @@
 		<select id="validateMemberName" resultType="int">
 			select count(*) from member where member_name=#{memberName}
 		</select>
-		<!-- 登录验证-->
-		<select id="findMemberByName" resultType="int">
-			select count(*) from member where member_name=#{member_name}
-		</select>
+
 		<!--注册验证-->
 		<select id="existMembername" resultType="int">
 				select count(*) from member where member_name=#{memberName}

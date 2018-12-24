@@ -27,33 +27,6 @@
     <script src="js/found.js" type="text/javascript"></script>
     <script src="js/jquery-1.10.1.js" type="text/javascript"></script>
 
-    <!--<script type="text/javascript">-->
-    <!--$(document).ready(function(){-->
-
-    <!--$("#to-fount-tip").mouseenter(function(){-->
-    <!--var tip=$(".found-tip");-->
-    <!--if(tip.css("display")=="none"){-->
-    <!--// tip.slideDown("fast");-->
-    <!--tip.show();-->
-    <!--}-->
-    <!--});-->
-    <!--$(".fount-tip").click(function(){-->
-    <!--var tip=$(".found-tip");-->
-    <!--tip.hide();-->
-    <!--});-->
-
-
-    <!--$("#to-fount-tip01").mouseenter(function(){-->
-    <!--var tip=$(".found-tip01");-->
-    <!--if(tip.css("display")=="none"){-->
-    <!--//tip.slideDown("fast");-->
-    <!--tip.show();-->
-    <!--}-->
-    <!--});-->
-
-    <!--})-->
-    <!--</script>-->
-
 </head>
 <body>
 <%@include file="top.jsp" %>

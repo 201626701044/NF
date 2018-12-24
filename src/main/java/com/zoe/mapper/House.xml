@@ -4,15 +4,11 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="com.zoe.mapper.HouseMapper">
+	<!--列出所有房源-->
 		<select id="list" resultType="House">
 			select * from   House order by houseID desc
 	  	</select>
-		<select id="findArea" resultType="House">
-				select * from   House where area=#{area}
-		</select>
-	<insert id="insert" parameterType="House" >
-	        insert into house ( rentPrice) values (#{rentPrice})
-	    </insert>
+	<!--按条件查询房源-->
 		<select id="listHouse" resultType="House">
 			select * from house
 			<where>
@@ -36,6 +32,13 @@
 				</if>
 			</where>
 		</select>
+		<select id="findArea" resultType="House">
+				select * from   House where area=#{area}
+		</select>
+	<insert id="insert" parameterType="House" >
+	        insert into house ( rentPrice) values (#{rentPrice})
+	    </insert>
+
 		<insert id="add" parameterType="House" >
 			insert into house (houseName,rentPrice,checkInDate,houseType,area,rentNum,image,way)
 			VALUES (#{houseName},#{rentPrice},#{checkInDate},#{houseType},#{area},#{rentNum},#{image},#{way})

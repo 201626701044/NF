@@ -32,7 +32,7 @@
     <div class="tab">
         <span>用户登录</span>
 
-        <form action="${pageContext.request.contextPath }/member/login.controller" method="post" >
+        <form action="${pageContext.request.contextPath }/member/personal.controller" method="post" >
 
             <div class="tab_1">
                 <img src="img/login/account_login.png">
@@ -52,7 +52,7 @@
 
         <div class="tab_2">
             <a href="#" class="login_tab_0">忘记密码</a>
-            <a href="register.jsp">新用户,去注册</a>
+            <a href="register.html">新用户,去注册</a>
         </div>
 
         <div class="tab_3">

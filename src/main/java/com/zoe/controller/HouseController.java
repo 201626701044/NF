@@ -32,13 +32,20 @@ public class HouseController {
     @Autowired
     HouseService houseService;
 
+    //列出所有房源
+    @RequestMapping("admin_house_list")
+    public String list(Model model) {
+        List<House> cs = houseService.list();
+        model.addAttribute("cs", cs);
+        return "admin/homePage";
+    }
 
-
-
+    //按条件查询房源
     @ResponseBody
     @RequestMapping(produces="text/html;charset=UTF-8", value = "/queryHouse")
     public String queryHouse(HttpServletResponse response,String alink,String numlink,int pricelink1,int pricelink2,String timelink,String sexlink,String waylink) throws IOException {
 
+        //获取当前时间
         Date now = new Date();
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(now);
@@ -64,12 +71,11 @@ public class HouseController {
         if ("no".equals(sexlink)) sexlink = null;
         if ("no".equals(waylink)) waylink = null;
 
-        JSONArray array = new JSONArray();
         List<House> houseList = houseService.listHouse(alink, numlink, pricelink1, pricelink2, timelink, sexlink, waylink);
 
         System.out.println(JSONObject.toJSON(houseList).toString());
         return JSONObject.toJSON(houseList).toString();
-
+//      JSONArray array = new JSONArray();
 //        response.setCharacterEncoding("utf-8");
 //        PrintWriter out = response.getWriter();
 //
@@ -113,13 +119,6 @@ public class HouseController {
 
 
 
-    @RequestMapping("admin_house_list")
-    public String list(Model model) {
-        List<House> cs = houseService.list();
-        model.addAttribute("cs", cs);
-        return "admin/homePage";
-//        return "admin/homePage001";
-    }
 
     @RequestMapping("addhouse")
     public String add(House house) {
