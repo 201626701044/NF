@@ -18,4 +18,9 @@ public class RentrequestServiceImpl implements RentrequestService {
 	public List<Rentrequest> list() {
 		return rentrequestMapper.list();
 	}
+
+	@Override
+	public int add(Rentrequest rentrequest) {
+		return rentrequestMapper.add(rentrequest);
+	}
 }

@@ -25,7 +25,7 @@ public interface HouseMapper {
 //                                  String checkInDate,String sex,String way);
 
 
-    public List<House> insert(int rentPrice);
+    public int insert(House house);
 
 
     public int add(House house);

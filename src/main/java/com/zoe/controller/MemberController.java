@@ -128,7 +128,7 @@ public class MemberController {
      * @throws IOException
      */
     @RequestMapping("login")
-    public String memberLogin2(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public String memberLogin2(Member member, HttpServletRequest request,HttpServletResponse response) throws IOException {
         String memberName = request.getParameter("memberName");
         String memberPassword = request.getParameter("memberPassword");
         int num = memberService.findMemberByNameAndPwd(memberName,memberPassword);
@@ -137,6 +137,7 @@ public class MemberController {
             HttpSession session = request.getSession();
             session.setAttribute("memberName",memberName);
             session.setAttribute("memberPassword",memberPassword);
+            session.setAttribute("login",member);
             //  return "settings";
             response.sendRedirect(request.getContextPath()+"/admin_house_list");
             return "loginsuccess";
@@ -206,10 +207,29 @@ public class MemberController {
     @ResponseBody
     @RequestMapping(produces="text/html;charset=UTF-8", value = "/getOneMember")
     public String getOneMember(Model model,Member member) {
+
+        String regFlag=null;
         List<Member> cs = memberService.list1(member.getMember_name() , member.getMember_password());
-        model.addAttribute("cs", cs);
-        System.out.println(JSONObject.toJSON(cs).toString());
-        return JSONObject.toJSON(cs).toString();
+        if(cs!=null)
+        {
+
+           // model.addAttribute("cs", cs);
+            System.out.println(JSONObject.toJSON(cs).toString());
+            return JSONObject.toJSON(cs).toString();
+        }
+        else {
+            Map<String,String> map= new HashMap<String,String >();
+            regFlag="failed";
+         //   map.put("regMsg","");
+            map.put("regFlag",regFlag);
+            System.out.println(JSONObject.toJSON(map).toString());
+            return  JSONObject.toJSON(map).toString();
+        }
+
+
+
+
+
     }
 
     @RequestMapping("personal")
@@ -253,5 +273,7 @@ public class MemberController {
 //            return "login2";
 //        }
 //    }
+
+
 
 }

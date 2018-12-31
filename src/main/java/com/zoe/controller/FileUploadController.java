@@ -126,12 +126,12 @@ public class FileUploadController {
                     //判断输入流中的数据是否已经读完的标识
                     int len = 0;
 
-                    String aa="E:\\NF\\target\\NF\\WEB-INF\\house";
+                    String aa="D:\\IdeaProject\\NF\\target\\NF\\WEB-INF\\house\\";
 
                     String directPath=aa+makeFileName(filename)+".jpg";
 
                     File file=new File(directPath);
-                    System.out.println("0909+"+directPath);
+                    System.out.println(directPath);
 
                     try {
                         item.write(file); //输出到目标文件
@@ -239,16 +239,27 @@ public class FileUploadController {
 
         System.out.println("asdasdasd");
         //  JSONObject json_data1 = jArray.getJSONObject(0);
+        String houseName=json.getString("houseName");
         String rentPrice=json.getString("rentPrice");  //userName对应你当时put时的名字
+        String houseType=json.getString("houseType");
         String area=json.getString("area");
         String elevator=json.getString("elevator");
         String description=json.getString("description");
+
+
         int price= Integer.parseInt(rentPrice);
-        houseService.insert(price);
-
-
-
+        System.out.println(houseName+price+houseType+area);
         String imagea=image;
+        House house = new House();
+        house.setHouseName(houseName);
+        house.setRentPrice(price);
+        house.setHouseType(houseType);
+        house.setArea(area);
+        house.setImage(imagea);
+        houseService.insert(house);
+
+
+
         System.out.println(imagea);
     }
 

@@ -13,9 +13,12 @@
 		<insert id="add" parameterType="Member" >
 	        insert into member ( member_name, member_password) values (#{member_name},#{member_password})
 	    </insert>
-
-	<select id="list" resultType="Member">
-			select * from   member order by member_ID desc
+         <insert id="insert" parameterType="Member" >
+	        insert into member ( member_name, member_image) values (#{member_name},#{member_image})
+	    </insert>
+        <!-- 查询用户信息 -->
+        <select id="list" resultType="Member">
+               select * from   member order by member_ID desc
 	  	</select>
 		<select id="list1" resultType="Member">
 			select * from   member where member_name=#{memberName} and member_password=#{memberPassword}
@@ -34,9 +37,11 @@
 		<select id="existMembername" resultType="int">
 				select count(*) from member where member_name=#{memberName}
 			</select>
+    <!-- 通过id查询用户信息 -->
 		<select id="selectByPrimaryKey" resultType="Member">
 				select * from   member where member_ID =#{memberId}
 			</select>
+
 	<update id="updateByPrimaryKeySelective" parameterType="Member" >
 		update member set member_image =#{member_image}
 		where member_name=#{member_name}
@@ -45,5 +50,12 @@
 	<select id="getMemberByName" resultType="Member">
 			select * from member where member_name=#{memberName}
 		</select>
+
+	<update id="update" parameterType="Member" >
+        update member set member_name=#{member_name},member_image =#{member_image} where member_ID=#{member_ID}
+    </update>
+    <delete id="delete">
+        delete from member where member_ID=#{member_ID}
+    </delete>
 	</mapper>
 

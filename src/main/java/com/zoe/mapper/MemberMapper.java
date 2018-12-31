@@ -28,7 +28,25 @@ public interface MemberMapper {
 
     int existMembername(String memberName);
 
-    Member selectByPrimaryKey(int memberId);
+    /**
+     * 通过id查询用户
+     */
+    Member selectByPrimaryKey(int member_ID);
+
+    /**
+     * 添加用户信息
+     */
+    public void insert(Member member);
+
+    /**
+     * 修改用户信息
+     */
+    public void update(Member member);
+
+    /**
+     * 删除用户信息
+     */
+    void delete(int member_ID);
 
     int updateByPrimaryKeySelective(Member record);
 

@@ -1,0 +1,199 @@
+.divs{
+    display: none;
+}
+.holder01{
+    height: 640px;
+    width: 640px;
+    background-color: gainsboro;
+    opacity: 0.9;
+    border-radius: 5px;
+    margin-left: 450px;
+}
+.nav ul{
+    list-style: none;
+    float: left;
+    margin-left: 200px;
+}
+.nav ul li{
+    font-family: "微软雅黑 Light";
+    font-size: 20px;
+    padding: 20px 40px;
+    text-align: center;
+    background-color: gainsboro;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.nav .nav-left .long{
+    height: 180px;
+    background-color: gainsboro;
+    opacity: 0.8;
+    margin-bottom: 100px;
+}
+.nav-right-ul{
+    width: 700px;
+    background-color: gainsboro;
+    opacity: 0.9;
+    border-radius: 5px;
+    margin-left: 450px;
+    margin-bottom: 80px;
+}
+.nav-right ul{
+    list-style: none;
+}
+.first{
+    width: 140px;
+    height: 45px;
+    background-color:coral;
+    -moz-border-radius-topleft:5px ;
+
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    color: white;
+}
+.first-line{
+   color: #F96D0C;
+}
+.second{
+    height: 80px;
+    /*border: 1px solid coral;*/
+    margin-left: 50px;
+}
+.second .describe{
+    float: left;
+    font-size: 18px;
+    line-height: 80px;
+
+}
+.photo01{
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-left: 90px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.photo02 {
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+    color: coral;
+    font-size: 18px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+    background-color: coral;
+
+
+    padding: 0px 40px;
+}
+.photo02  a{
+    text-decoration: none;
+    color: white;
+}
+.nav .nav-left a:hover{
+    color: #F96D0C;
+}
+
+.name01{
+    font-size:20px ;
+    float: left;
+    margin-left: 90px;
+    margin-top: 28px;
+}
+.nav-left .long{
+    height: 30px;
+    background-color: gainsboro;
+}
+.nav-left a{
+    text-decoration: none;
+    color: black;
+}
+
+#turn-photo{
+    width: 300px;
+    height: 100px;
+    background-color: #99ff99;
+    float: left;
+    margin-left: 120px;
+}
+.t-photo{
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+}
+.turn-name{
+    width: 300px;
+    height: 95px;
+    background-color: #99ff99;
+    float: left;
+    margin-left: 120px;
+    border: black 1px solid;
+}
+
+
+.nav-right-ul01 {
+    list-style: none;
+}
+.third{
+    height: 100px;
+    line-height: 100px;
+}
+.xg-describe{
+    float: left;
+    margin-left: 50px;
+    font-size: 18px;
+    line-height: 100px;
+}
+.xg-photo01{
+    float: left;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    margin-left: 90px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.xg-photo02{
+    float: right;
+    margin-right: 150px;
+    margin-top: 30px;
+    color: coral;
+    font-size: 18px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+    background-color: coral;
+
+
+    padding: 0px 40px;
+}
+.xg-photo02  a{
+    text-decoration: none;
+    color: white;
+}
+.input-name{
+    border: 0px;
+    margin-left: 60px;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+}
+.xg-sex01{
+    margin-left: 90px;
+    font-size: 18px;
+}
+.xg-submit{
+    background-color: #F96D0C;
+    font-size: 16px;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-left: 160px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.xg-file{
+    margin-left: 50px;
+}

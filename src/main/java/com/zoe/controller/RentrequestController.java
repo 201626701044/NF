@@ -37,4 +37,11 @@ public class RentrequestController {
         return "admin/requestPage";
     }
 
+    //发布请求
+    @RequestMapping("addrequest")
+    public String add(Rentrequest rentrequest){
+        rentrequestService.add(rentrequest);
+        return "admin/addrequest";
+    }
+
 }

@@ -36,12 +36,15 @@
 				select * from   House where area=#{area}
 		</select>
 	<insert id="insert" parameterType="House" >
-	        insert into house ( rentPrice) values (#{rentPrice})
+	        <!--insert into house ( rentPrice) values (#{rentPrice})-->
+			insert into house (houseName,rentPrice,houseType,area,image)
+			VALUES (#{houseName},#{rentPrice},#{houseType},#{area},#{image})
 	    </insert>
 
 		<insert id="add" parameterType="House" >
 			insert into house (houseName,rentPrice,checkInDate,houseType,area,rentNum,image,way)
 			VALUES (#{houseName},#{rentPrice},#{checkInDate},#{houseType},#{area},#{rentNum},#{image},#{way})
 	    </insert>
+
 	</mapper>
 

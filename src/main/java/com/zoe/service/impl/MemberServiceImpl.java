@@ -40,6 +40,29 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public Member selectByPrimaryKey(int member_ID) {
+		return memberMapper.selectByPrimaryKey(member_ID);
+	}
+
+	@Override
+	public void insert(Member member) {
+
+		memberMapper.insert(member);
+	}
+
+	@Override
+	public void update(Member member) {
+
+		memberMapper.update(member);
+	}
+
+	@Override
+	public void delete(int member_ID) {
+
+		memberMapper.delete(member_ID);
+	}
+
+	@Override
 	public int findMemberByName(String member_name) {
 		return memberMapper.findMemberByName(member_name);
 	}

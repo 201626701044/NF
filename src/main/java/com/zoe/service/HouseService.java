@@ -17,7 +17,7 @@ public interface HouseService {
 	List<House> listAndRequest();
 	public List<House> findArea(String area);
 
-	public List<House> insert(int rentPrice);
+	public int insert(House house);
 
     public int add(House house);
 }

@@ -10,5 +10,7 @@ public interface RentrequestService {
 
 	public List<Rentrequest> list();
 
+	//发布添加用户
+	public int add(Rentrequest rentrequest);
 }
 
