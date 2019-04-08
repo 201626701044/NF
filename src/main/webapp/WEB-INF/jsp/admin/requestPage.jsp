@@ -27,7 +27,13 @@
     <script src="js/found.js" type="text/javascript"></script>
     <script src="js/jquery-1.10.1.js" type="text/javascript"></script>
 
+
 </head>
+<style type="text/css">
+    .page{
+        text-align: center;
+    }
+</style>
 <body>
 <%@include file="top.jsp" %>
 
@@ -42,8 +48,6 @@
     <div class="top-right">
         <a><img src="img/house/address.png" >南昌</a>
         <a href="#">下载App</a>
-        <img class="self-pho" src="img/found/luck.png" alt="">
-        <a>好名字</a>
     </div>
 
 </div>
@@ -52,7 +56,7 @@
     <c:forEach items="${cs}" var="c">
     <div id="to-fount-tip" class="content">
         <div class="cont-top">
-            <img class="photo" src="${c.image}" alt="">
+            <img class="photo" src="${ctx}/upload/${c.image}" alt="">
             <div class="name">
                 <a class="a-one" href="#">${c.nickname}</a><br>
                 <a class="a-two">${c.job}</a>
@@ -63,8 +67,8 @@
 
         <div class="cont-middle">
             <p class="title1">￥${c.budget}</p>
-            <p class="title2">一个月后入住</p>
-            <a class="title3"><img src="img/house/address.png" >昌东镇</a>
+            <%--<p class="title2">${c.reqTime}</p>--%>
+            <a class="title3"><img src="img/house/address.png" >${c.city}</a>
         </div>
 
         <div class="cont-bottom">
@@ -99,6 +103,14 @@
         是江西省人民政府确定为优先发展的省属重点（师范）大学。<br>
     </div>
 
+</div>
+    <div class="page">
+        <p>当前页是${pageInfo.pageNum}/${pageInfo.pages}</p>
+        <a href="/request/admin_rentrequest_list?page=${pageInfo.firstPage}">第一页</a>
+        <a href="/request/admin_rentrequest_list?page=${pageInfo.nextPage}">下一页</a>
+        <a href="/request/admin_rentrequest_list?page=${pageInfo.prePage}">上一页</a>
+        <a href="/request/admin_rentrequest_list?page=${pageInfo.lastPage}">最后页</a></div>
+    <%--<%@include file="adminPage.jsp"%>--%>
 </div>
 
 <div class="footer">

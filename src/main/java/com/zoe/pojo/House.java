@@ -21,15 +21,6 @@ public class House {
      * 非数据库字段
      * 一个房源对应多个请求
      */
-    private List<Rentrequest> rentrequests;
-
-    public List<Rentrequest> getRentrequests() {
-        return rentrequests;
-    }
-
-    public void setRentrequests(List<Rentrequest> rentrequests) {
-        this.rentrequests = rentrequests;
-    }
 
     public String getImage() {
         return image;
@@ -142,7 +133,6 @@ public class House {
                 ", way='" + way + '\'' +
                 ", description='" + description + '\'' +
                 ", sex='" + sex + '\'' +
-                ", rentrequests=" + rentrequests +
                 '}';
     }
 }

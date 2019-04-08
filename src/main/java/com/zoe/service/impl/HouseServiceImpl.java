@@ -1,11 +1,8 @@
 package com.zoe.service.impl;
 
 import com.zoe.mapper.HouseMapper;
-import com.zoe.mapper.RentrequestMapper;
 import com.zoe.pojo.House;
-import com.zoe.pojo.Rentrequest;
 import com.zoe.service.HouseService;
-import com.zoe.service.RentrequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,58 +13,21 @@ import java.util.List;
 public class HouseServiceImpl implements HouseService {
 	@Autowired
 	HouseMapper houseMapper;
-	@Autowired
-	RentrequestMapper  rentrequestMapper;
 
-	//列出所有房源
 	@Override
-	public List<House> list() {
-		return houseMapper.list();
-	}
-
-	//按条件查询房源
-	@Override
-	public List<House> listHouse(String area,String rentNum,int rentPrice1,int rentPrice2,
-								 String checkInDate,String sex,String way) {
-		List<House> houses=houseMapper.listHouse(area,rentNum,rentPrice1,rentPrice2,checkInDate,sex,way);
-//	 	List<House> houses=houseMapper.list();
-//		for(House house:houses)
-//		{
-//			house.setRentrequests(rentrequestMapper.listAndRequest(house.getHouseID()));
-//		}
-		return houses;
+	public List<House> find() {
+		return houseMapper.find();
 	}
 
 	@Override
-	public List<House> listAndRequest() {
-		List<House> houses=houseMapper.list();
-		for(House house:houses)
-		{
-			house.setRentrequests(rentrequestMapper.listAndRequest(house.getHouseID()));
-		}
-		return houses;
+	public List<House> queryByArea(String area) {
+		return houseMapper.queryByArea(area);
 	}
 
 	@Override
-	public List<House> findArea(String area) {
-
-		List<House> houses=houseMapper.findArea(area);
-		for(House house:houses)
-		{
-			house.setRentrequests(rentrequestMapper.listAndRequest(house.getHouseID()));
-		}
-		return houses;
+	public void insert(House house) {
+		houseMapper.insert(house);
 	}
 
-
-	@Override
-	public int insert(House house) {
-		return houseMapper.insert(house);
-	}
-
-	@Override
-	public int add(House house) {
-		return houseMapper.add(house);
-	}
 
 }

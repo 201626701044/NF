@@ -15,7 +15,24 @@
     <link href="css/pushhouse.css" type="text/css" rel="stylesheet"  />
     <script src="js/pushhouse.js" type="text/javascript"></script>
 
+    <script type="text/javascript">
+        function showPreview(source) {
+            var file = source.files[0];
+            if(window.FileReader) {
+                var fr = new FileReader();
+                console.log(fr);
+                var portrait = document.getElementById('portrait');
+                fr.onloadend = function(e) {
+                    portrait.src = e.target.result;
+                };
+                fr.readAsDataURL(file);
+                portrait.style.display = 'block';
+            }
+        }
+    </script>
+
 </head>
+
 <body>
 
 <div class="header">
@@ -39,17 +56,15 @@
     <div class="top-right">
         <a><img src="img/house/address.png" >南昌</a>
         <a href="#">下载App</a>
-        <img class="self-pho" src="img/found/luck.png" alt="">
-        <a>好名字</a>
     </div>
 
 </div>
 
 <div class="pushhouse">
-    <form action="${pageContext.request.contextPath }/addrequest.controller" method="post">
     <div class="first">求租发布</div>
     <hr class="first-line">
-    <ul class="push-ul">
+    <form action="${ctx}/request/addrequest" method="post" enctype="multipart/form-data">
+        <ul class="push-ul">
         <li>
             <span class="push-describe">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span>
             <input class="push-money" type="text" name="nickname" placeholder=" 请输入昵称">
@@ -61,35 +76,37 @@
         <li>
             <span class="push-describe">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span>
             <span class="push-address">
-            <select id="One" title="" name="area"></select>
-            <select id="Two" title="" name="area"></select>
-            <select id="Three" title=""name="area"></select>
+            <select id="One" title="" name="city"></select>
+            <select id="Two" title="" name="city"></select>
+            <select id="Three" title=""name="city"></select>
             </span>
         </li>
         <li>
             <span class="push-describe">发布时间</span>
-            <input class="push-money" type="job" name="checkInDate">
+            <input class="push-money" type="date"  name="reqTime">
         </li>
 
         <li>
             <span class="push-describe">预算</span>
-            <input class="push-money" type="text" name="budget" placeholder=" 请输入房型">
+            <input class="push-money" type="text" name="budget" placeholder=" 请输入预算">
         </li>
         <li>
-            <span class="push-describe">室友性格</span>
-            <input class="push-money" type="text" name="mateCharacter" placeholder=" 请输入几人入住">
+            <span class="push-describe">描述</span>
+            <input class="push-money" type="text" name="mateCharacter" placeholder="请输入要求">
         </li>
         <li>
             <span class="push-describe"> 头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像</span>
-            <input class="push-photos" type="file" name="image" >
+            <input type="file" name="file" onchange="showPreview(this)" />
+            <img id="portrait" src="" style="display:none;width: 100px;height:100px;" />
         </li>
+
         <li>
             <input class="push-submit" type="submit" value="提交" name="确认">
         </li>
     </ul>
     </form>
-</div>
 
+</div>
 
 
 </body>

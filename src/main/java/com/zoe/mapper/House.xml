@@ -4,47 +4,28 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="com.zoe.mapper.HouseMapper">
+
 	<!--列出所有房源-->
-		<select id="list" resultType="House">
+		<select id="find" resultType="House">
 			select * from   House order by houseID desc
-	  	</select>
-	<!--按条件查询房源-->
-		<select id="listHouse" resultType="House">
+		</select>
+
+	<!--按地区查询-->
+		<select id="queryByArea" resultType="House">
 			select * from house
 			<where>
-				<if test="area != null " >
-					and area =#{area}
-				</if>
-				<if test="rentNum !=null">
-					and rentNum =#{rentNum}
-				</if>
-				<if test="rentPrice1 !=-1 and rentPrice2 !=-1">
-					and rentPrice between #{rentPrice1} and #{rentPrice2}
-				</if>
-				<if test="checkInDate !=null ">
-					and checkInDate >=#{checkInDate}
-				</if>
-				<if test="sex!=null">
-					and sex =#{sex}
-				</if>
-				<if test="way!=null">
-					and way =#{way}
+				<if test="area!=null and area !=''">
+					and area like concat('%',#{area},'%')
 				</if>
 			</where>
 		</select>
-		<select id="findArea" resultType="House">
-				select * from   House where area=#{area}
-		</select>
-	<insert id="insert" parameterType="House" >
-	        <!--insert into house ( rentPrice) values (#{rentPrice})-->
-			insert into house (houseName,rentPrice,houseType,area,image)
-			VALUES (#{houseName},#{rentPrice},#{houseType},#{area},#{image})
-	    </insert>
 
-		<insert id="add" parameterType="House" >
-			insert into house (houseName,rentPrice,checkInDate,houseType,area,rentNum,image,way)
-			VALUES (#{houseName},#{rentPrice},#{checkInDate},#{houseType},#{area},#{rentNum},#{image},#{way})
-	    </insert>
+	<!-- 添加房源 -->
+		<insert id="insert" parameterType="House" >
+			insert into house (houseName,rentPrice,houseType,area,image,way)
+			VALUES (#{houseName},#{rentPrice},#{houseType},#{area},#{image},#{way})
+		</insert>
 
-	</mapper>
+
+</mapper>
 

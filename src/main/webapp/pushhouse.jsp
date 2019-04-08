@@ -15,6 +15,21 @@
     <link href="css/pushhouse.css" type="text/css" rel="stylesheet"  />
     <script src="js/pushhouse.js" type="text/javascript"></script>
 
+    <script type="text/javascript">
+        function showPreview(source) {
+            var file = source.files[0];
+            if(window.FileReader) {
+                var fr = new FileReader();
+                console.log(fr);
+                var portrait = document.getElementById('portrait');
+                fr.onloadend = function(e) {
+                    portrait.src = e.target.result;
+                };
+                fr.readAsDataURL(file);
+                portrait.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 
 <style>
@@ -59,8 +74,8 @@
     <div class="top-right">
         <a><img src="img/house/address.png" >南昌</a>
         <a href="#">下载App</a>
-        <img class="self-pho" src="img/found/luck.png" alt="">
-        <a>好名字</a>
+        <%--<img class="self-pho" src="img/found/luck.png" alt="">--%>
+        <%--<a>好名字</a>--%>
     </div>
 
 </div>
@@ -69,62 +84,55 @@
 
     <div class="first">房源发布</div>
     <hr class="first-line">
-    <ul class="push-ul">
-        <li>
-            <span class="push-describe">房&nbsp;&nbsp;&nbsp;源&nbsp;&nbsp;&nbsp;名</span>
-            <input class="push-money" type="text" name="houseName" placeholder=" 请输入房源名">
-        </li>
-        <li>
-            <span class="push-describe">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金</span>
-            <input class="push-money" type="text" name="rentPrice" placeholder=" 请输入租金">
-        </li>
-        <li>
-            <span class="push-describe">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span>
-            <span class="push-address">
-            <select id="One" title="" name="area"></select>
-            <select id="Two" title="" name="area"></select>
-            <select id="Three" title=""name="area"></select>
-            </span>
-        </li>
-        <li>
-            <span class="push-describe">入住时间</span>
-            <input class="push-money" type="date" name="checkInDate">
-        </li>
+    <form action="addHouse" method="post" enctype="multipart/form-data">
+        <ul class="push-ul">
+            <li>
+                <span class="push-describe">房&nbsp;&nbsp;&nbsp;源&nbsp;&nbsp;&nbsp;名</span>
+                <input class="push-money" type="text" name="houseName" placeholder=" 请输入房源名">
+            </li>
+            <li>
+                <span class="push-describe">租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金</span>
+                <input class="push-money" type="text" name="rentPrice" placeholder=" 请输入租金">
+            </li>
+            <li>
+                <span class="push-describe">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</span>
+                <span class="push-money">
+                <select id="One" title="" name="area"></select>
+                <select id="Two" title="" name="area"></select>
+                <select id="Three" title=""name="area"></select>
+                </span>
+            </li>
+            <li>
+                <span class="push-describe">入住时间</span>
+                <input class="push-money" type="date" name="checkInDate">
+            </li>
 
-        <li>
-            <span class="push-describe">房型</span>
-            <input class="push-money" type="text" name="houseType" placeholder=" 请输入房型">
-        </li>
-        <li>
-            <span class="push-describe">入住人数</span>
-            <input class="push-money" type="text" name="rentNum" placeholder=" 请输入几人入住">
-        </li>
-        <li>
-            <span class="push-describe"> 照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片</span>
-            <form action="/upload-file.do" method="post" enctype="multipart/form-data">
-                <input type="file" name="multipartFile"/>
-                <button type="submit">上传</button>
-            </form>
-            <img src="uploadFile/${sessionScope.imgPath}" alt="等待上传..." onerror="this.style.display='none'"/>
-        </li>
-        <li>
-            <span class="push-describe"> 方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;式</span>
-            <input class="push-photos" type="text" name="way" >
-        </li>
-
-        <!-- /*<li>
-             /*<span class="push-describe"> 描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述</span>*/
-             /*<form class="" action="" >*/
-                 /*<textarea class="push-content" rows="4" cols="20">*/
-                 /*</textarea>*/
-             /*</form>*/
-         /*</li>*/
-         -->
-        <li>
-            <input class="push-submit" type="submit" value="提交" name="确认">
-        </li>
-    </ul>
-
+            <li>
+                <span class="push-describe">房型</span>
+                <input class="push-money" type="text" name="houseType" placeholder=" 请输入房型">
+            </li>
+            <li>
+                <span class="push-describe">入住人数</span>
+                <input class="push-money" type="text" name="rentNum" placeholder=" 请输入几人入住">
+            </li>
+            <li>
+                <span class="push-describe"> 方&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;式</span>
+                <input class="push-money" type="text" name="way" >
+            </li>
+            <%--<li>--%>
+                <%--<span class="push-describe"> 要&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;求</span>--%>
+                <%--<input class="push-descripton" type="text" name="description" >--%>
+            <%--</li>--%>
+            <li>
+                <span class="push-describe"> 头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像</span>
+                <input type="file" name="file" onchange="showPreview(this)" />
+                <img id="portrait" src="" style="display:none;width: 100px;height:100px;" />
+            </li>
+            <li>
+                <input class="push-submit" type="submit" value="提交" name="确认">
+            </li>
+        </ul>
+    </form>
 </div>
 
 

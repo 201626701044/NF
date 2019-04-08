@@ -5,9 +5,10 @@
   Time: 16:42
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+         pageEncoding="UTF-8" import="java.util.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,6 +31,11 @@
     </script>
 
 </head>
+<style type="text/css">
+    .page{
+        text-align: center;
+    }
+</style>
 <script >
     $(document).ready(function() {
         $(".lookfor").click(function() {
@@ -358,9 +364,12 @@
         </div>
 
         <div class="search">
-            <form >
-                <input type="text" class="search1"id="citySelect" placeholder=" 请输入关键字 地段···"/>
+
+            <form action="${pageContext.request.contextPath }/queryByArea" method="get">
+                <input type="text" name="area"  placeholder=" 请输入关键字 地段···"/>
+                <input type="submit" value="查询">
             </form>
+
         </div>
 
     </div>
@@ -506,14 +515,7 @@
     <div  class="title ">
         <ul>
             <li><a href="#" class="all" >房源信息</a></li>
-            <li class="shipin2"><a href="requestPage.jsp" >求租信息</a></li>
-            <!-- <li class="shipin2"><a href="pushhouse.jsp" >发布房源</a></li>-->
-            <!-- <li class="shipin2"><a href="pushrequest.jsp" >发布求租</a></li>-->
-
-
-            <!--<li class="shipin2"><a href="#" ><img class="shipin" src="../img/index.img/shipin.png" alt=""><span class="shipin1">视频看房</span></a></li>-->
-            <!--<li><a href="found.html" >我要求租</a></li>-->
-            <!--<li><a href="#" >个性推荐</a></li>-->
+            <li class="shipin2"><a href="../../../requestPage.jsp" >求租信息</a></li>
         </ul>
     </div>
     <div class="title-line"></div>
@@ -526,7 +528,7 @@
                 <div id="outer">
                     <!--房屋图片-->
                     <ul id="imgList">
-                        <li><img src="${c.image}" alt="" width="200px" height="300px"></li>
+                        <li><img src="${ctx}/upload/${c.image}" alt="" width="200px" height="300px"></li>
                     </ul>
                 </div>
             </div>
@@ -535,27 +537,34 @@
                 <div class="content-right-top">
                     <p class="one"><a href="#">${c.houseName}</a></p>
                     <p class="two">${c.houseType} </p>
-                    <span><img src="${c.image}" alt=""><p class="three">${c.area}</p></span>
+                    <span><img src="${ctx}/upload/${c.image}" alt=""><p class="three">${c.area}</p></span>
                     <p class="four"> </p>
                 </div>
 
                 <div class="content-right-bottom">
                     <p class="five">${c.rentPrice}</p>
-                    <p class="photo">业主出租</p>
-                    <p class="six"><a href="#">查看详情</a> </p>
+                    <p class="photo">${c.way}</p>
+                    <p class="six"><a href="detail.jsp">查看详情</a> </p>
                 </div>
             </div>
 
         </div>
+
     </c:forEach>
+
 </div>
+
+
 </div>
-<div style="text-align:center">
-    <a href="?start=1">首页</a>
-    <a href="?start=${page.start-page.count}">上一页</a>
-    <a href="?start=${page.start+page.count}">下一页</a>
-    <a href="?start=${page.last}">末  页</a>
+<div class="page">
+    <p>当前页是${pageInfo.pageNum}/${pageInfo.pages}</p>
+    <a href="/admin_house_list?page=${pageInfo.firstPage}">第一页</a>
+    <a href="/admin_house_list?page=${pageInfo.nextPage}">下一页</a>
+    <a href="/admin_house_list?page=${pageInfo.prePage}">上一页</a>
+    <a href="/admin_house_list?page=${pageInfo.lastPage}">最后页</a></div>
+<%--<%@include file="adminPage.jsp"%>--%>
 </div>
+
 <div class="footer">
     <div class="footer1">
         <a href="#">关于我们 </a><span>‖</span>

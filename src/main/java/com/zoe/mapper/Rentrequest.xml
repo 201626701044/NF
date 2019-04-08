@@ -13,8 +13,8 @@
 			select * from   rentrequest  where houseID = #{houseID} order by reqID desc
 	  	</select>
 		<insert id="add" parameterType="Rentrequest" >
-			insert into rentrequest (houseName,rentPrice,checkInDate,houseType,area,rentNum,image,way)
-			VALUES (#{houseName},#{rentPrice},#{checkInDate},#{houseType},#{area},#{rentNum},#{image},#{way})
+			insert into rentrequest (reqTime,budget,job,city,nickname,mateCharacter,image)
+			VALUES (#{reqTime},#{budget},#{job},#{city},#{nickname},#{mateCharacter},#{image})
 	    </insert>
 
 	</mapper>

@@ -2,23 +2,24 @@ package com.zoe.service;
 
 
 import com.zoe.pojo.House;
+import org.apache.ibatis.annotations.Param;
+
 
 import java.util.List;
 
 public interface HouseService {
 
-	//列出所有房源
-	public List<House> list();
-
-	//按条件查询房源
-	public  List<House> listHouse(String area,String rentNum,int rentPrice1,int rentPrice2,
-								  String checkInDate,String sex,String way);
-
-	List<House> listAndRequest();
-	public List<House> findArea(String area);
-
-	public int insert(House house);
-
-    public int add(House house);
+	/**
+	 * 显示房源信息
+	 */
+	public List<House> find();
+	/**
+	 * 通过area查询房源
+	 */
+	public List<House> queryByArea(String area);
+	/**
+	 * 添加房源信息
+	 */
+	public void insert(House house);
 }
 

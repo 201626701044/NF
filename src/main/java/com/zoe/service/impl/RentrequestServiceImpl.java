@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class RentrequestServiceImpl implements RentrequestService {
 	@Autowired
-	RentrequestMapper rentrequestMapper;
+    RentrequestMapper rentrequestMapper;
 
 	@Override
 	public List<Rentrequest> list() {
